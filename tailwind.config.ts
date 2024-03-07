@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 export default {
   content: [
@@ -14,6 +15,57 @@ export default {
       center: true,
     },
     extend: {
+      fontFamily: {
+        sans: [
+          "Poppins",
+          "Prompt",
+          "Noto Sans JP",
+          ...defaultTheme.fontFamily.sans,
+        ],
+        prompt: ["Prompt", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        "noto-sans-jp": ["Noto Sans JP", "sans-serif"],
+      },
+      fontSize: {
+        "sh-1": [
+          "34px",
+          {
+            lineHeight: "42px",
+          },
+        ],
+        "sh-2": [
+          "24px",
+          {
+            lineHeight: "32px",
+          },
+        ],
+        "b-1": [
+          "16px",
+          {
+            lineHeight: "24px",
+          },
+        ],
+        "b-2": [
+          "14px",
+          {
+            lineHeight: "20px",
+          },
+        ],
+        "b-3": [
+          "12px",
+          {
+            lineHeight: "18px",
+          },
+        ],
+        btn: [
+          "16px",
+          {
+            lineHeight: "24px",
+          },
+        ],
+        caption: "14px",
+        overline: "12px",
+      },
       colors: {
         neutral: {
           50: "#f2f2f2",
@@ -106,11 +158,6 @@ export default {
           900: "#641d1d",
         },
         accent: "#e9eaf1",
-      },
-      aspectRatio: {
-        auto: "auto",
-        square: "1 / 1",
-        video: "16 / 9",
       },
     },
   },

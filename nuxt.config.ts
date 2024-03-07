@@ -9,8 +9,18 @@ export default defineNuxtConfig({
       "composables/*.{d.ts,ts,js,mjs,mts}",
     ],
   },
-  modules: ["@nuxt/ui"],
+  modules: ["@nuxt/ui", "@nuxtjs/google-fonts"],
   ui: {
     global: true,
+  },
+  googleFonts: {
+    preload: true,
+    display: "swap",
+    download: false,
+    families: {
+      Prompt: [300, 400, 500, 600, 700],
+      Poppins: [300, 400, 500, 600, 700],
+      "Noto Sans JP": [300, 400, 500, 600, 700],
+    },
   },
 });
