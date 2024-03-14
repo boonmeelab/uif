@@ -27,4 +27,8 @@
     font-size: 20px;
     line-height: 30px;
   }
+@layer components {
+  .container {
+    max-width: 1440px;
+  }
 }

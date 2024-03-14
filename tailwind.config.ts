@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-const defaultTheme = require("tailwindcss/defaultTheme");
+import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
   content: [
@@ -15,6 +15,18 @@ export default {
       center: true,
     },
     extend: {
+      screens: {
+        "xl-desktop": { min: "1890px" },
+        "l-desktop": { max: "1889px" },
+        "-l-desktop": { min: "1440px", max: "1889px" },
+        "s-desktop": { max: "1439px" },
+        "-s-desktop": { min: "1024px", max: "1439px" },
+        tablet: { max: "1023px" },
+        "-tablet": { min: "768px", max: "1023px" },
+        mobile: { max: "767px" },
+        "-mobile": { min: "480px", max: "767px" },
+        "s-mobile": { max: "479px" },
+      },
       fontFamily: {
         sans: [
           "Poppins",
@@ -83,7 +95,7 @@ export default {
           DEFAULT: "#d82a71",
           50: "#fdeaf2",
           100: "#f9bed6",
-          200: "#f9bed6",
+          200: "#F79FC3",
           300: "#f373a7",
           400: "#f15896",
           500: "#ed2e7c",
@@ -96,7 +108,7 @@ export default {
           DEFAULT: "#1e2564",
           50: "#e9eaf1",
           100: "#babdd2",
-          200: "#f9bed6",
+          200: "#999DBC",
           300: "#6a709e",
           400: "#4d548b",
           500: "#21296e",
@@ -157,7 +169,7 @@ export default {
           800: "#832525",
           900: "#641d1d",
         },
-        accent: "#e9eaf1",
+        accent: "#00FF85",
       },
     },
   },

@@ -10,6 +10,9 @@ export default defineNuxtConfig({
     ],
   },
   modules: ["@nuxt/ui", "@nuxtjs/google-fonts"],
+  colorMode: {
+    preference: "light",
+  },
   ui: {
     global: true,
   },
