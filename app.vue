@@ -6,6 +6,8 @@
       <Typography />
       <hr />
       <ScreenSize />
+      <hr />
+      <ScreenPadding />
     </div>
   </div>
 </template>
