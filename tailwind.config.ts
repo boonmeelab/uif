@@ -226,6 +226,25 @@ export default {
           },
         },
       });
+
+      addUtilities({
+        ".screen-padding": {
+          paddingLeft: "96px",
+          paddingRight: "96px",
+          "@media screen(-s-desktop)": {
+            paddingLeft: "48px",
+            paddingRight: "48px",
+          },
+          "@media screen(-tablet)": {
+            paddingLeft: "32px",
+            paddingRight: "32px",
+          },
+          "@media screen(mobile)": {
+            paddingLeft: "16px",
+            paddingRight: "16px",
+          },
+        },
+      });
     }),
   ],
 } satisfies Config;
