@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    word-break: break-word;
+  }
   h1 {
     font-size: 96px;
     line-height: 112px;
@@ -27,6 +30,11 @@
     font-size: 20px;
     line-height: 30px;
   }
+  hr {
+    border-color: theme("colors.neutral.100");
+  }
+}
+
 @layer components {
   .container {
     max-width: 1440px;
