@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
+import plugin from "tailwindcss/plugin";
 
 export default {
   content: [
@@ -173,5 +174,58 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addBase, addUtilities, theme }) {
+      addBase({
+        h1: {
+          fontSize: "96px",
+          lineHeight: "112px",
+          "@media screen(mobile)": {
+            fontSize: "60px",
+            lineHeight: "72px",
+          },
+        },
+        h2: {
+          fontSize: "60px",
+          lineHeight: "72px",
+          "@media screen(mobile)": {
+            fontSize: "48px",
+            lineHeight: "56px",
+          },
+        },
+        h3: {
+          fontSize: "48px",
+          lineHeight: "56px",
+          "@media screen(mobile)": {
+            fontSize: "34px",
+            lineHeight: "42px",
+          },
+        },
+        h4: {
+          fontSize: "34px",
+          lineHeight: "42px",
+          "@media screen(mobile)": {
+            fontSize: "24px",
+            lineHeight: "32px",
+          },
+        },
+        h5: {
+          fontSize: "24px",
+          lineHeight: "32px",
+          "@media screen(mobile)": {
+            fontSize: "20px",
+            lineHeight: "30px",
+          },
+        },
+        h6: {
+          fontSize: "20px",
+          lineHeight: "30px",
+          "@media screen(mobile)": {
+            fontSize: "18px",
+            lineHeight: "24px",
+          },
+        },
+      });
+    }),
+  ],
 } satisfies Config;
