@@ -4,6 +4,8 @@
       <ColorPalettes />
       <hr />
       <Typography />
+      <hr />
+      <Screens />
     </div>
   </div>
 </template>
