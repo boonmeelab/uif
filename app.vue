@@ -1,11 +1,11 @@
 <template>
-  <div class="px-16 py-12">
+  <div class="screen-padding py-12">
     <div class="container flex flex-col gap-14">
       <ColorPalettes />
       <hr />
       <Typography />
       <hr />
-      <Screens />
+      <ScreenSize />
     </div>
   </div>
 </template>

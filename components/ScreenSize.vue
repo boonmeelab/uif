@@ -12,6 +12,11 @@
       <div class="col-span-9 flex flex-col gap-8">
         <div class="flex flex-col gap-5">
           <div class="col-span-3">
+            <div
+              class="w-fit rounded-sm bg-ciPrimary-50 px-2 py-0.5 text-b-3 font-semibold text-ciPrimary"
+            >
+              Default
+            </div>
             <div class="text-sh-2 font-bold text-neutral-900">
               Small Mobile (0-479px)
             </div>
@@ -68,6 +73,11 @@
 
         <div class="flex flex-col gap-5">
           <div class="col-span-3">
+            <div
+              class="w-fit rounded-sm bg-ciPrimary-50 px-2 py-0.5 text-b-3 font-semibold text-ciPrimary"
+            >
+              Default
+            </div>
             <div class="text-sh-2 font-bold text-neutral-900">
               Tablet (768-1023px)
             </div>
@@ -103,6 +113,11 @@
 
         <div class="flex flex-col gap-5">
           <div class="col-span-3">
+            <div
+              class="w-fit rounded-sm bg-ciPrimary-50 px-2 py-0.5 text-b-3 font-semibold text-ciPrimary"
+            >
+              Default
+            </div>
             <div class="text-sh-2 font-bold text-neutral-900">
               Small Desktop (1024-1439px)
             </div>
