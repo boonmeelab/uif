@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="grid grid-cols-12 gap-x-8 gap-y-12">
-      <div class="sticky top-8 col-span-3 flex h-fit flex-col gap-5 pb-28">
+      <div class="sticky top-20 col-span-3 flex h-fit flex-col gap-5 pb-28">
         <h4 class="font-bold uppercase">Screens sizes</h4>
 
         <div class="bg-neutral-50 opacity-50">
@@ -10,23 +10,35 @@
       </div>
 
       <div class="col-span-9 flex flex-col gap-8">
+        <div>
+          <p class="text-b-1 text-neutral-700">
+            There are a total of 6 screen sizes for the responsive website. The
+            default design includes 3 sizes: <br />
+            <span class="font-semibold">Small Mobile</span>,
+            <span class="font-semibold">Tablet</span> and
+            <span class="font-semibold">Small Desktop.</span>
+            However, customers have the option to add or reduce sizes according
+            to their preferences.
+          </p>
+        </div>
+
         <div class="flex flex-col gap-5">
           <div class="col-span-3">
             <div
-              class="w-fit rounded-sm bg-ciPrimary-50 px-2 py-0.5 text-b-3 font-semibold text-ciPrimary"
+              class="w-fit rounded-sm bg-primary-50 px-2 py-0.5 text-b-3 font-semibold text-primary"
             >
               Default
             </div>
             <div class="text-sh-2 font-bold text-neutral-900">
               Small Mobile (0-479px)
             </div>
-            <div class="text-b-2 text-neutral-600">s-mobile:</div>
+            <div class="text-b-2 text-neutral-600">smobile!:</div>
           </div>
 
           <div class="flex flex-col gap-6">
             <div class="text-b-1 text-neutral-900">
-              screen size less than
-              <b>{{ `  ${screens["s-mobile"].max}` }}</b>
+              screen size is less than equal to
+              <b>{{ ` ${screens["s-mobile"].max}` }}</b>
             </div>
 
             <div class="bg-neutral-50">
@@ -45,24 +57,24 @@
               Mobile (480-767px)
             </div>
             <div class="text-b-2 text-neutral-600">
-              <div>-mobile:</div>
+              <div>mobile!:</div>
               <div>mobile:</div>
             </div>
           </div>
 
           <div class="flex flex-col gap-6">
             <div class="text-b-1 text-neutral-900">
-              <div class="font-bold">-mobile:</div>
+              <div class="font-bold">mobile!:</div>
               <div>Only mobile (480-767px)</div>
 
               <div class="font-bold">mobile:</div>
-              <div>Screen size less than and equal to <u>mobile</u></div>
+              <div>Screen size 0-767px</div>
             </div>
             <div class="flex flex-col gap-2">
               <div class="bg-neutral-50">
                 <div
                   class="mx-auto h-72 max-w-full bg-neutral-100"
-                  :style="`width:${screens['-mobile'].min}`"
+                  :style="`width:${screens['mobile!'].min}`"
                 ></div>
               </div>
             </div>
@@ -74,7 +86,7 @@
         <div class="flex flex-col gap-5">
           <div class="col-span-3">
             <div
-              class="w-fit rounded-sm bg-ciPrimary-50 px-2 py-0.5 text-b-3 font-semibold text-ciPrimary"
+              class="w-fit rounded-sm bg-primary-50 px-2 py-0.5 text-b-3 font-semibold text-primary"
             >
               Default
             </div>
@@ -82,27 +94,24 @@
               Tablet (768-1023px)
             </div>
             <div class="text-b-2 text-neutral-600">
-              <div>-tablet:</div>
+              <div>tablet!:</div>
               <div>tablet:</div>
             </div>
           </div>
 
           <div class="flex flex-col gap-6">
             <div class="text-b-1 text-neutral-900">
-              <div class="font-bold">-tablet:</div>
+              <div class="font-bold">tablet!:</div>
               <div>Only tablet (768-1023px)</div>
 
               <div class="font-bold">tablet:</div>
-              <div>
-                Screen size less than and equal to
-                <u>tablet</u>
-              </div>
+              <div>Screen size 0-1023px</div>
             </div>
             <div class="flex flex-col gap-2">
               <div class="bg-neutral-50">
                 <div
                   class="mx-auto h-72 max-w-full bg-neutral-100"
-                  :style="`width:${screens['-tablet'].min}`"
+                  :style="`width:${screens['tablet!'].min}`"
                 ></div>
               </div>
             </div>
@@ -114,35 +123,32 @@
         <div class="flex flex-col gap-5">
           <div class="col-span-3">
             <div
-              class="w-fit rounded-sm bg-ciPrimary-50 px-2 py-0.5 text-b-3 font-semibold text-ciPrimary"
+              class="w-fit rounded-sm bg-primary-50 px-2 py-0.5 text-b-3 font-semibold text-primary"
             >
               Default
             </div>
             <div class="text-sh-2 font-bold text-neutral-900">
-              Small Desktop (1024-1439px)
+              Desktop (1024-1439px)
             </div>
             <div class="text-b-2 text-neutral-600">
-              <div>-s-desktop:</div>
-              <div>s-desktop:</div>
+              <div>desktop!:</div>
+              <div>desktop:</div>
             </div>
           </div>
 
           <div class="flex flex-col gap-6">
             <div class="text-b-1 text-neutral-900">
-              <div class="font-bold">-s-desktop:</div>
-              <div>Only small desktop (1024-1439px)</div>
+              <div class="font-bold">desktop!:</div>
+              <div>Only desktop (1024-1439px)</div>
 
-              <div class="font-bold">s-desktop:</div>
-              <div>
-                Screen size less than and equal to
-                <u>small desktop</u>
-              </div>
+              <div class="font-bold">desktop:</div>
+              <div>Screen size 0-1439px</div>
             </div>
             <div class="flex flex-col gap-2">
               <div class="bg-neutral-50">
                 <div
                   class="mx-auto h-72 max-w-full bg-neutral-100"
-                  :style="`width:${screens['-s-desktop'].min}`"
+                  :style="`width:${screens['desktop!'].min}`"
                 ></div>
               </div>
             </div>
@@ -157,27 +163,24 @@
               Large Desktop (1440-1889px)
             </div>
             <div class="text-b-2 text-neutral-600">
-              <div>-s-desktop:</div>
-              <div>s-desktop:</div>
+              <div>desktop!:</div>
+              <div>desktop:</div>
             </div>
           </div>
 
           <div class="flex flex-col gap-6">
             <div class="text-b-1 text-neutral-900">
-              <div class="font-bold">-l-desktop:</div>
-              <div>Only small desktop (1440-1889px)</div>
+              <div class="font-bold">l-desktop!:</div>
+              <div>Only large desktop (1440-1889px)</div>
 
               <div class="font-bold">l-desktop:</div>
-              <div>
-                Screen size less than and equal to
-                <u>large desktop</u>
-              </div>
+              <div>Screen size 0-1889px</div>
             </div>
             <div class="flex flex-col gap-2">
               <div class="bg-neutral-50">
                 <div
                   class="mx-auto h-72 max-w-full bg-neutral-100"
-                  :style="`width:${screens['-l-desktop'].min}`"
+                  :style="`width:${screens['l-desktop!'].min}`"
                 ></div>
               </div>
             </div>
@@ -199,10 +202,6 @@
           <div class="flex flex-col gap-6">
             <div class="text-b-1 text-neutral-900">
               <div class="font-bold">xl-desktop:</div>
-              <div>
-                Screen size less than and equal to
-                <u>extra large desktop</u>
-              </div>
             </div>
             <div class="flex flex-col gap-2">
               <div class="bg-neutral-50">
@@ -220,9 +219,11 @@
 </template>
 
 <script setup lang="ts">
+import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "~/tailwind.config";
 
-const screens = tailwindConfig.theme.extend.screens;
+const fullConfig = resolveConfig(tailwindConfig);
+const screens = _get(fullConfig, "theme.screens", {});
 </script>
 
 <style scoped></style>

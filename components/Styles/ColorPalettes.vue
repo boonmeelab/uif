@@ -1,14 +1,11 @@
 <template>
   <div class="grid grid-cols-12 gap-x-8 gap-y-12">
-    <div class="sticky top-8 col-span-3 flex h-fit flex-col gap-5 pb-28">
+    <div class="sticky top-20 col-span-3 flex h-fit flex-col gap-5 pb-28">
       <h4 class="font-bold uppercase">Colors</h4>
-
-      <div class="w-fit max-w-full shadow-md shadow-ciPrimary-100">
-        <div
-          class="aspect-1 w-[100px] rounded border-2 border-ciPrimary-400 p-3"
-        >
+      <div class="w-fit max-w-full">
+        <div class="aspect-1 w-[100px] rounded border-2 border-primary-400 p-3">
           <div
-            class="text-b-1 font-bold uppercase text-ciPrimary opacity-50"
+            class="text-b-1 font-bold uppercase text-primary opacity-50"
             style="writing-mode: vertical-lr; text-orientation: upright"
           >
             paintone
@@ -27,7 +24,7 @@
           <div>
             <div
               :class="[
-                'h-10 w-20 rounded-md',
+                'h-10 w-20 rounded',
                 { 'border border-neutral-100': item.default },
                 item.default,
               ]"
@@ -39,12 +36,18 @@
                   `Default${Object.keys(item.colors).length > 0 ? `(500)` : ""}`
                 }}
               </div>
+              <div class="text-[10px] text-neutral-500">
+                {{
+                  (themeColors[item.id] || {})["DEFAULT"] ||
+                  themeColors[item.id]
+                }}
+              </div>
             </div>
           </div>
 
           <div v-for="(val, key, index) in item.colors">
             <div
-              class="h-10 w-14 rounded-md border border-neutral-100"
+              class="h-10 w-14 rounded border border-neutral-100"
               :class="val"
             />
             <div class="mt-1">
@@ -52,7 +55,7 @@
                 {{ key }}
               </div>
               <div class="text-[10px] text-neutral-500">
-                {{ themeColors[item.id][key] }}
+                {{ (themeColors[item.id] || {})[key] }}
               </div>
             </div>
           </div>
@@ -63,9 +66,11 @@
 </template>
 
 <script setup lang="ts">
+import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "~/tailwind.config";
 
-const themeColors = tailwindConfig.theme.extend.colors;
+const fullConfig = resolveConfig(tailwindConfig);
+const themeColors = _get(fullConfig, "theme.colors");
 
 const colorPalettes = [
   {
@@ -86,20 +91,20 @@ const colorPalettes = [
     },
   },
   {
-    id: "ciPrimary",
+    id: "primary",
     label: "primary",
-    default: "bg-ciPrimary",
+    default: "bg-primary",
     colors: {
-      50: "bg-ciPrimary-50",
-      100: "bg-ciPrimary-100",
-      200: "bg-ciPrimary-200",
-      300: "bg-ciPrimary-300",
-      400: "bg-ciPrimary-400",
-      500: "bg-ciPrimary-500",
-      600: "bg-ciPrimary-600",
-      700: "bg-ciPrimary-700",
-      800: "bg-ciPrimary-800",
-      900: "bg-ciPrimary-900",
+      50: "bg-primary-50",
+      100: "bg-primary-100",
+      200: "bg-primary-200",
+      300: "bg-primary-300",
+      400: "bg-primary-400",
+      500: "bg-primary-500",
+      600: "bg-primary-600",
+      700: "bg-primary-700",
+      800: "bg-primary-800",
+      900: "bg-primary-900",
     },
   },
   {

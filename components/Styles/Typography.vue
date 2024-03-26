@@ -1,6 +1,6 @@
 <template>
   <div class="grid grid-cols-12 gap-x-8 gap-y-12">
-    <div class="sticky top-8 col-span-3 flex h-fit flex-col gap-5 pb-28">
+    <div class="sticky top-20 col-span-3 flex h-fit flex-col gap-5 pb-28">
       <h4 class="font-bold uppercase">Typography</h4>
 
       <div
@@ -15,7 +15,7 @@
     <div class="col-span-9 flex flex-col gap-8">
       <div class="flex flex-col gap-10">
         <div class="flex flex-col gap-2">
-          <h4 class="font-bold">Font Family</h4>
+          <h5 class="font-bold">Font Family</h5>
           <p class="text-b-1 text-neutral-700">
             Font family that supports Thai, English, and Japanese content.
           </p>
@@ -24,11 +24,11 @@
         <div class="flex flex-col gap-8">
           <div class="grid grid-cols-12 gap-4">
             <div class="col-span-3">
-              <div class="text-sh-2 font-bold text-neutral-900">Prompt</div>
+              <h6 class="font-bold text-neutral-900">Prompt</h6>
               <div class="text-b-2 text-neutral-600">font-prompt</div>
             </div>
 
-            <div class="col-span-9 grid gap-3">
+            <div class="col-span-9 grid gap-2">
               <div class="grid grid-cols-9 gap-4">
                 <div class="col-span-2 pt-2">
                   <div class="text-b-3 text-neutral-500">
@@ -36,9 +36,9 @@
                   </div>
                 </div>
                 <div class="col-span-7 self-end">
-                  <h4 class="truncate font-light text-neutral-900">
+                  <h5 class="truncate font-light text-neutral-900">
                     ลุงบุญมีระลึกชาติ
-                  </h4>
+                  </h5>
                 </div>
               </div>
 
@@ -49,9 +49,9 @@
                   </div>
                 </div>
                 <div class="col-span-7 self-end">
-                  <h4 class="truncate font-normal text-neutral-900">
+                  <h5 class="truncate font-normal text-neutral-900">
                     ลุงบุญมีระลึกชาติ
-                  </h4>
+                  </h5>
                 </div>
               </div>
 
@@ -62,9 +62,9 @@
                   </div>
                 </div>
                 <div class="col-span-7 self-end">
-                  <h4 class="truncate font-medium text-neutral-900">
+                  <h5 class="truncate font-medium text-neutral-900">
                     ลุงบุญมีระลึกชาติ
-                  </h4>
+                  </h5>
                 </div>
               </div>
 
@@ -75,9 +75,9 @@
                   </div>
                 </div>
                 <div class="col-span-7 self-end">
-                  <h4 class="truncate font-semibold text-neutral-900">
+                  <h5 class="truncate font-semibold text-neutral-900">
                     ลุงบุญมีระลึกชาติ
-                  </h4>
+                  </h5>
                 </div>
               </div>
 
@@ -88,9 +88,9 @@
                   </div>
                 </div>
                 <div class="col-span-7 self-end">
-                  <h4 class="truncate font-bold text-neutral-900">
+                  <h5 class="truncate font-bold text-neutral-900">
                     ลุงบุญมีระลึกชาติ
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -100,11 +100,11 @@
 
           <div class="grid grid-cols-12 gap-4">
             <div class="col-span-3">
-              <div class="text-sh-2 font-bold text-neutral-900">Poppins</div>
+              <h6 class="font-bold text-neutral-900">Poppins</h6>
               <div class="text-b-2 text-neutral-600">font-poppins</div>
             </div>
 
-            <div class="col-span-9 grid gap-3">
+            <div class="col-span-9 grid gap-2">
               <div class="grid grid-cols-9 gap-4">
                 <div class="col-span-2 pt-2">
                   <div class="text-b-3 text-neutral-500">
@@ -112,9 +112,9 @@
                   </div>
                 </div>
                 <div class="col-span-7 self-end">
-                  <h4 class="truncate font-light text-neutral-900">
+                  <h5 class="truncate font-light text-neutral-900">
                     Uncle Boonmee Who Can Recall His Past Lives
-                  </h4>
+                  </h5>
                 </div>
               </div>
 
@@ -125,9 +125,9 @@
                   </div>
                 </div>
                 <div class="col-span-7 self-end">
-                  <h4 class="truncate font-normal text-neutral-900">
+                  <h5 class="truncate font-normal text-neutral-900">
                     Uncle Boonmee Who Can Recall His Past Lives
-                  </h4>
+                  </h5>
                 </div>
               </div>
 
@@ -138,9 +138,9 @@
                   </div>
                 </div>
                 <div class="col-span-7 self-end">
-                  <h4 class="truncate font-medium text-neutral-900">
+                  <h5 class="truncate font-medium text-neutral-900">
                     Uncle Boonmee Who Can Recall His Past Lives
-                  </h4>
+                  </h5>
                 </div>
               </div>
 
@@ -151,9 +151,9 @@
                   </div>
                 </div>
                 <div class="col-span-7 self-end">
-                  <h4 class="truncate font-semibold text-neutral-900">
+                  <h5 class="truncate font-semibold text-neutral-900">
                     Uncle Boonmee Who Can Recall His Past Lives
-                  </h4>
+                  </h5>
                 </div>
               </div>
 
@@ -164,9 +164,9 @@
                   </div>
                 </div>
                 <div class="col-span-7 self-end">
-                  <h4 class="truncate font-bold text-neutral-900">
+                  <h5 class="truncate font-bold text-neutral-900">
                     Uncle Boonmee Who Can Recall His Past Lives
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -176,13 +176,11 @@
 
           <div class="grid grid-cols-12 gap-4">
             <div class="col-span-3">
-              <div class="text-sh-2 font-bold text-neutral-900">
-                Noto Sans JP
-              </div>
+              <h6 class="font-bold text-neutral-900">Noto Sans JP</h6>
               <div class="text-b-2 text-neutral-600">font-noto-sans-jp</div>
             </div>
 
-            <div class="col-span-9 grid gap-3">
+            <div class="col-span-9 grid gap-2">
               <div class="grid grid-cols-9 gap-4">
                 <div class="col-span-2 pt-2">
                   <div class="text-b-3 text-neutral-500">
@@ -190,9 +188,9 @@
                   </div>
                 </div>
                 <div class="col-span-7 self-end">
-                  <h4 class="truncate font-light text-neutral-900">
+                  <h5 class="truncate font-light text-neutral-900">
                     ブンミおじさんの森
-                  </h4>
+                  </h5>
                 </div>
               </div>
 
@@ -203,9 +201,9 @@
                   </div>
                 </div>
                 <div class="col-span-7 self-end">
-                  <h4 class="truncate font-normal text-neutral-900">
+                  <h5 class="truncate font-normal text-neutral-900">
                     ブンミおじさんの森
-                  </h4>
+                  </h5>
                 </div>
               </div>
 
@@ -216,9 +214,9 @@
                   </div>
                 </div>
                 <div class="col-span-7 self-end">
-                  <h4 class="truncate font-medium text-neutral-900">
+                  <h5 class="truncate font-medium text-neutral-900">
                     ブンミおじさんの森
-                  </h4>
+                  </h5>
                 </div>
               </div>
 
@@ -229,9 +227,9 @@
                   </div>
                 </div>
                 <div class="col-span-7 self-end">
-                  <h4 class="truncate font-semibold text-neutral-900">
+                  <h5 class="truncate font-semibold text-neutral-900">
                     ブンミおじさんの森
-                  </h4>
+                  </h5>
                 </div>
               </div>
 
@@ -242,9 +240,9 @@
                   </div>
                 </div>
                 <div class="col-span-7 self-end">
-                  <h4 class="truncate font-bold text-neutral-900">
+                  <h5 class="truncate font-bold text-neutral-900">
                     ブンミおじさんの森
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -260,7 +258,7 @@
     >
       <div class="flex flex-col gap-10">
         <div class="flex flex-col gap-2">
-          <h4 class="font-bold">Font Sizes</h4>
+          <h5 class="font-bold">Font Sizes</h5>
           <p class="text-b-1 text-neutral-700">
             Font size display is responsive for desktop and mobile.
           </p>
@@ -272,7 +270,7 @@
             <div class="text-b-2 text-neutral-600"></div>
           </div>
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -291,7 +289,7 @@
 
           <div class="col-span-3" />
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -317,7 +315,7 @@
             <div class="text-b-2 text-neutral-600"></div>
           </div>
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -336,7 +334,7 @@
 
           <div class="col-span-3" />
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -362,7 +360,7 @@
             <div class="text-b-2 text-neutral-600"></div>
           </div>
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -381,7 +379,7 @@
 
           <div class="col-span-3" />
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -407,7 +405,7 @@
             <div class="text-b-2 text-neutral-600"></div>
           </div>
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -417,16 +415,16 @@
                 </div>
               </div>
               <div class="col-span-7 self-end">
-                <h4 class="truncate font-light text-neutral-900">
+                <h5 class="truncate font-light text-neutral-900">
                   ลุงบุญมีระลึกชาติ
-                </h4>
+                </h5>
               </div>
             </div>
           </div>
 
           <div class="col-span-3" />
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -436,11 +434,11 @@
                 </div>
               </div>
               <div class="col-span-7 self-end">
-                <h4
+                <h5
                   class="truncate text-[24px] font-light leading-[32px] text-neutral-900"
                 >
                   ลุงบุญมีระลึกชาติ
-                </h4>
+                </h5>
               </div>
             </div>
           </div>
@@ -452,7 +450,7 @@
             <div class="text-b-2 text-neutral-600"></div>
           </div>
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -471,7 +469,7 @@
 
           <div class="col-span-3" />
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -497,7 +495,7 @@
             <div class="text-b-2 text-neutral-600"></div>
           </div>
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -516,7 +514,7 @@
 
           <div class="col-span-3" />
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -542,7 +540,7 @@
             <div class="text-b-2 text-neutral-600">text-sh-1</div>
           </div>
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -566,7 +564,7 @@
             <div class="text-b-2 text-neutral-600">text-sh-1</div>
           </div>
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -590,7 +588,7 @@
             <div class="text-b-2 text-neutral-600">text-b-1</div>
           </div>
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -614,7 +612,7 @@
             <div class="text-b-2 text-neutral-600">text-b-2</div>
           </div>
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -638,7 +636,7 @@
             <div class="text-b-2 text-neutral-600">text-b-3</div>
           </div>
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -662,7 +660,7 @@
             <div class="text-b-2 text-neutral-600">text-btn</div>
           </div>
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -686,7 +684,7 @@
             <div class="text-b-2 text-neutral-600">text-caption</div>
           </div>
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
@@ -710,7 +708,7 @@
             <div class="text-b-2 text-neutral-600">text-overline</div>
           </div>
 
-          <div class="col-span-9 grid gap-3">
+          <div class="col-span-9 grid gap-2">
             <div class="grid grid-cols-9 gap-4">
               <div class="col-span-2 pt-2">
                 <div class="text-b-3 text-neutral-500">
