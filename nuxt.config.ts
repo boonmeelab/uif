@@ -14,7 +14,7 @@ export default defineNuxtConfig({
       "composables/*.{d.ts,ts,js,mjs,mts}",
     ],
   },
-  modules: ["@nuxt/ui", "@nuxtjs/google-fonts"],
+  modules: ["@nuxt/ui", "@nuxtjs/google-fonts", "nuxt-lodash"],
   colorMode: {
     preference: "light",
   },
@@ -30,5 +30,9 @@ export default defineNuxtConfig({
       Poppins: [300, 400, 500, 600, 700],
       "Noto Sans JP": [300, 400, 500, 600, 700],
     },
+  },
+  lodash: {
+    prefix: "_",
+    upperAfterPrefix: false,
   },
 });
