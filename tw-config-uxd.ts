@@ -55,14 +55,88 @@ const twUxd = plugin(
     });
 
     addUtilities({
+      '.text-h1': {
+        "font-size": "96px",
+        "line-height": "112px",
+        "@media screen(mobile)": {
+          "font-size": "60px",
+          "line-height": "72px",
+        },
+      },
+      '.text-h2': {
+        "font-size": "60px",
+        "line-height": "72px",
+        "@media screen(mobile)": {
+          "font-size": "48px",
+          "line-height": "56px",
+        },
+      },
+      '.text-h3': {
+        "font-size": "48px",
+        "line-height": "56px",
+        "@media screen(mobile)": {
+          "font-size": "34px",
+          "line-height": "42px",
+        },
+      },
+      '.text-h4': {
+        "font-size": "34px",
+        "line-height": "42px",
+        "@media screen(mobile)": {
+          "font-size": "24px",
+          "line-height": "32px",
+        },
+      },
+      '.text-h5': {
+        "font-size": "24px",
+        "line-height": "32px",
+        "@media screen(mobile)": {
+          "font-size": "20px",
+          "line-height": "30px",
+        },
+      },
+      '.text-h6': {
+        "font-size": "20px",
+        "line-height": "30px",
+        "@media screen(mobile)": {
+          "font-size": "18px",
+          "line-height": "24px",
+        },
+      },
+      ".text-sub-h-1": {
+        "font-size": "34px",
+        "line-height": "42px",
+      },
+      ".text-sub-h-2": {
+        "font-size": "24px",
+        "line-height": "32px",
+      },
+      ".text-b-1": {
+        "font-size": "16px",
+        "line-height": "24px",
+      },
+      ".text-b-2": {
+        "font-size": "14px",
+        "line-height": "20px",
+      },
+      ".text-b-3": {
+        "font-size": "12px",
+        "line-height": "18px",
+      },
+      ".text-btn": {
+        "font-size": "16px",
+        "line-height": "24px",
+      },
+      ".text-caption": { "font-size": "14px" },
+      ".text-overline": { "font-size": "12px" },
       ".screen-padding": {
         paddingLeft: "96px",
         paddingRight: "96px",
-        "@media screen(desktop!)": {
+        "@media screen(desktop-only)": {
           paddingLeft: "48px",
           paddingRight: "48px",
         },
-        "@media screen(tablet!)": {
+        "@media screen(tablet-only)": {
           paddingLeft: "32px",
           paddingRight: "32px",
         },
@@ -71,7 +145,39 @@ const twUxd = plugin(
           paddingRight: "16px",
         },
       },
-      container: {},
+      ".container": {
+        maxWidth: '1440px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        "@media (max-width: 1440px)": {
+          maxWidth: '1100px',
+        },
+      },
+      ".container-sm": {
+        maxWidth: '860px',
+        marginLeft: 'auto',
+        marginRight: 'auto'
+      },
+      ".container-md": {
+        maxWidth: '1100px',
+        marginLeft: 'auto',
+        marginRight: 'auto'
+      },
+      ".container-lg": {
+        maxWidth: '1440px',
+        marginLeft: 'auto',
+        marginRight: 'auto'
+      },
+      ".container-xl": {
+        maxWidth: '1600px',
+        marginLeft: 'auto',
+        marginRight: 'auto'
+      },
+      ".container-wide": {
+        maxWidth: '1920px',
+        marginLeft: 'auto',
+        marginRight: 'auto'
+      },
     });
   },
   {
@@ -95,13 +201,13 @@ const twUxd = plugin(
         screens: {
           "xl-desktop": { min: "1890px" },
           "l-desktop": { max: "1889px" },
-          "l-desktop!": { min: "1440px", max: "1889px" },
+          "l-desktop-only": { min: "1440px", max: "1889px" },
           desktop: { max: "1439px" },
-          "desktop!": { min: "1024px", max: "1439px" },
+          "desktop-only": { min: "1024px", max: "1439px" },
           tablet: { max: "1023px" },
-          "tablet!": { min: "768px", max: "1023px" },
+          "tablet-only": { min: "768px", max: "1023px" },
           mobile: { max: "767px" },
-          "mobile!": { min: "480px", max: "767px" },
+          "mobile-only": { min: "480px", max: "767px" },
           "s-mobile": { max: "479px" },
         },
         colors: {
@@ -209,46 +315,6 @@ const twUxd = plugin(
             900: "#641d1d",
           },
           accent: "#00FF85",
-        },
-        fontSize: {
-          "sh-1": [
-            "34px",
-            {
-              lineHeight: "42px",
-            },
-          ],
-          "sh-2": [
-            "24px",
-            {
-              lineHeight: "32px",
-            },
-          ],
-          "b-1": [
-            "16px",
-            {
-              lineHeight: "24px",
-            },
-          ],
-          "b-2": [
-            "14px",
-            {
-              lineHeight: "20px",
-            },
-          ],
-          "b-3": [
-            "12px",
-            {
-              lineHeight: "18px",
-            },
-          ],
-          btn: [
-            "16px",
-            {
-              lineHeight: "24px",
-            },
-          ],
-          caption: "14px",
-          overline: "12px",
         },
         borderRadius: {
           DEFAULT: "6px",

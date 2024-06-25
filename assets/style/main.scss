@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    background-color: white;
+  }
   * {
     word-break: break-word;
   }

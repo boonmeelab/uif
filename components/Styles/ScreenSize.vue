@@ -32,7 +32,7 @@
             <div class="text-sh-2 font-bold text-neutral-900">
               Small Mobile (0-479px)
             </div>
-            <div class="text-b-2 text-neutral-600">smobile!:</div>
+            <div class="text-b-2 text-neutral-600">smobile-only:</div>
           </div>
 
           <div class="flex flex-col gap-6">
@@ -57,14 +57,14 @@
               Mobile (480-767px)
             </div>
             <div class="text-b-2 text-neutral-600">
-              <div>mobile!:</div>
+              <div>mobile-only:</div>
               <div>mobile:</div>
             </div>
           </div>
 
           <div class="flex flex-col gap-6">
             <div class="text-b-1 text-neutral-900">
-              <div class="font-bold">mobile!:</div>
+              <div class="font-bold">mobile-only:</div>
               <div>Only mobile (480-767px)</div>
 
               <div class="font-bold">mobile:</div>
@@ -74,7 +74,7 @@
               <div class="bg-neutral-50">
                 <div
                   class="mx-auto h-72 max-w-full bg-neutral-100"
-                  :style="`width:${screens['mobile!'].min}`"
+                  :style="`width:${screens['mobile-only'].min}`"
                 ></div>
               </div>
             </div>
@@ -94,14 +94,14 @@
               Tablet (768-1023px)
             </div>
             <div class="text-b-2 text-neutral-600">
-              <div>tablet!:</div>
+              <div>tablet-only:</div>
               <div>tablet:</div>
             </div>
           </div>
 
           <div class="flex flex-col gap-6">
             <div class="text-b-1 text-neutral-900">
-              <div class="font-bold">tablet!:</div>
+              <div class="font-bold">tablet-only:</div>
               <div>Only tablet (768-1023px)</div>
 
               <div class="font-bold">tablet:</div>
@@ -111,7 +111,7 @@
               <div class="bg-neutral-50">
                 <div
                   class="mx-auto h-72 max-w-full bg-neutral-100"
-                  :style="`width:${screens['tablet!'].min}`"
+                  :style="`width:${screens['tablet-only'].min}`"
                 ></div>
               </div>
             </div>
@@ -131,14 +131,14 @@
               Desktop (1024-1439px)
             </div>
             <div class="text-b-2 text-neutral-600">
-              <div>desktop!:</div>
+              <div>desktop-only:</div>
               <div>desktop:</div>
             </div>
           </div>
 
           <div class="flex flex-col gap-6">
             <div class="text-b-1 text-neutral-900">
-              <div class="font-bold">desktop!:</div>
+              <div class="font-bold">desktop-only:</div>
               <div>Only desktop (1024-1439px)</div>
 
               <div class="font-bold">desktop:</div>
@@ -148,7 +148,7 @@
               <div class="bg-neutral-50">
                 <div
                   class="mx-auto h-72 max-w-full bg-neutral-100"
-                  :style="`width:${screens['desktop!'].min}`"
+                  :style="`width:${screens['desktop-only'].min}`"
                 ></div>
               </div>
             </div>
@@ -163,14 +163,14 @@
               Large Desktop (1440-1889px)
             </div>
             <div class="text-b-2 text-neutral-600">
-              <div>desktop!:</div>
+              <div>desktop-only:</div>
               <div>desktop:</div>
             </div>
           </div>
 
           <div class="flex flex-col gap-6">
             <div class="text-b-1 text-neutral-900">
-              <div class="font-bold">l-desktop!:</div>
+              <div class="font-bold">l-desktop-only:</div>
               <div>Only large desktop (1440-1889px)</div>
 
               <div class="font-bold">l-desktop:</div>
@@ -180,7 +180,7 @@
               <div class="bg-neutral-50">
                 <div
                   class="mx-auto h-72 max-w-full bg-neutral-100"
-                  :style="`width:${screens['l-desktop!'].min}`"
+                  :style="`width:${screens['l-desktop-only'].min}`"
                 ></div>
               </div>
             </div>
