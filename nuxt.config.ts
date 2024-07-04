@@ -20,6 +20,16 @@ export default defineNuxtConfig({
   },
   ui: {
     global: true,
+    icons: ['svg-spinners'],
+    safelistColors: [
+      'primary',
+      'neutral',
+      'secondary',
+      'tertiary',
+      'success',
+      'warning',
+      'error',
+    ]
   },
   googleFonts: {
     preload: true,

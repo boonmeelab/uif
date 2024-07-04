@@ -1,0 +1,292 @@
+<template>
+  <div class="">
+    <HeaderConent title="Button">
+      Based on UI Framework
+      <a
+        href="https://ui.nuxt.com/components/button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <UBadge variant="subtle">NuxtUI/Button</UBadge></a
+      >
+      , Design Systems by BML-INT-UXD
+      <a
+        href="https://www.figma.com/design/jQpNsc72oiEP08XREsYobw/BML-UXD?node-id=2310-19772&t=73wIgnZyW4Y0CbpJ-4"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <UBadge variant="subtle">Figma</UBadge></a
+      >
+    </HeaderConent>
+
+    <div class="py-10">
+      <div class="mb-3 flex flex-col gap-3">
+        <h6 class="font-semibold">Config Settings</h6>
+      </div>
+
+      <div class="grid grid-cols-5 gap-4">
+        <UFormGroup
+          label="Label"
+          help="Enter text to change the text in the button."
+        >
+          <UInput
+            v-model="text_button"
+            @blur="text_button === '' ? (text_button = 'Button') : false"
+          />
+        </UFormGroup>
+
+        <UFormGroup label="Size">
+          <USelectMenu v-model="size" :options="optionSize" />
+
+          <template #help>
+            <p>
+              Change the size of the Button. The unit is
+              <UBadge color="gray" variant="solid">px</UBadge> <br />
+              default: <UBadge color="gray" variant="solid">36px</UBadge>
+            </p>
+          </template>
+        </UFormGroup>
+
+        <UFormGroup label="Color">
+          <USelectMenu v-model="color" :options="optionColor" />
+
+          <template #help>
+            <p>
+              Change the visual style of the Button. <br />
+              default: <UBadge color="gray" variant="solid">primary</UBadge>
+            </p>
+          </template>
+        </UFormGroup>
+
+        <UFormGroup label="Variant">
+          <USelectMenu
+            v-model="variant"
+            :options="optionVariant"
+            value-attribute="value"
+          />
+
+          <template #help>
+            <p>
+              Change the visual style of the Button. <br />
+              default: <UBadge color="gray" variant="solid">solid</UBadge>
+            </p>
+          </template>
+        </UFormGroup>
+
+        <div />
+
+        <UFormGroup>
+          <template #label>
+            <UCheckbox v-model="trailing" name="Trailing" label="trailing" />
+          </template>
+
+          <template #help>
+            <p>
+              set the icon position. default:
+              <UBadge color="gray" variant="solid">leading</UBadge>
+            </p>
+          </template>
+        </UFormGroup>
+
+        <UFormGroup>
+          <template #label>
+            <UCheckbox v-model="disabled" name="Disabled" label="disabled" />
+          </template>
+        </UFormGroup>
+
+        <UFormGroup>
+          <template #label>
+            <UCheckbox v-model="loading" name="Loading" label="loading" />
+          </template>
+
+          <template #help>
+            <p>
+              Show a loading icon and
+              <span class="font-semibold">disable</span> the Button.
+              <Icon name="i-svg-spinners-90-ring-with-bg"></Icon> need to
+              install
+              <UBadge color="gray" variant="solid"
+                >@iconify-json/svg-spinners</UBadge
+              >
+            </p>
+          </template>
+        </UFormGroup>
+
+        <UFormGroup>
+          <template #label>
+            <UCheckbox v-model="padded" name="Padded" label="padded" />
+          </template>
+
+          <template #help>
+            Remove the padding of the Button. suitable for variant
+            <UBadge color="gray" variant="solid">icon</UBadge>
+          </template>
+        </UFormGroup>
+
+        <UFormGroup>
+          <template #label>
+            <UCheckbox v-model="square" name="Square" label="square" />
+          </template>
+
+          <template #help>
+            Force the Button to have the same padding horizontally and
+            vertically. suitable for variant
+            <UBadge color="gray" variant="solid">Action Button</UBadge>
+          </template>
+        </UFormGroup>
+      </div>
+
+      <div class="mt-6 flex flex-col gap-2">
+        <h6 class="font-semibold">Ui Display</h6>
+      </div>
+
+      <section class="mt-6">
+        <div class="font-semibold text-b-1">Default</div>
+
+        <div class="mt-3 flex gap-10">
+          <UButton
+            :color="color"
+            :variant="variant"
+            :label="text_button"
+            :size="size"
+            :trailing="trailing"
+            :loading="loading"
+            :padded="padded"
+            :square="square"
+            :disabled="disabled"
+            icon="i-heroicons-arrow-up-on-square-solid"
+          ></UButton>
+
+          <UButton
+            :color="color"
+            :variant="variant"
+            :label="text_button"
+            :size="size"
+            :trailing="trailing"
+            :loading="loading"
+            :padded="padded"
+            :square="square"
+            :disabled="disabled"
+          ></UButton>
+        </div>
+      </section>
+
+      <section class="mt-6">
+        <div>
+          <div class="font-semibold text-b-1">Action Button</div>
+          <div class="mt-2 flex flex-col gap-2 text-neutral-700 text-b-2">
+            <p>
+              action button of UXD design buttons should have an attribute
+              <UBadge variant="subtle">square</UBadge>
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <UButton
+            :color="color"
+            :variant="variant"
+            :size="size"
+            :padded="padded"
+            :loading="loading"
+            :disabled="disabled"
+            square
+            icon="i-heroicons-arrow-up-on-square-solid"
+          ></UButton>
+        </div>
+      </section>
+
+      <section class="mt-6">
+        <div>
+          <div class="font-semibold text-b-1">Icon Button</div>
+          <div class="mt-2 flex flex-col gap-2 text-neutral-700 text-b-2">
+            <p>variant should be <UBadge variant="subtle">icon</UBadge></p>
+            <p>
+              Use any icon from
+              <UButton
+                label="Iconify"
+                size="24px"
+                variant="link"
+                to="https://icones.js.org/"
+                target="_blank"
+              ></UButton>
+              by setting the icon prop by using this pattern:
+              <UBadge color="gray" variant="solid"
+                >i-{collection_name}-{icon_name}.</UBadge
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <UButton
+            :color="color"
+            variant="icon"
+            :size="size"
+            :padded="padded"
+            :square="square"
+            :disabled="disabled"
+            icon="i-heroicons-archive-box-solid"
+          ></UButton>
+        </div>
+      </section>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+const text_button = ref("Button");
+
+const trailing = ref(false);
+const disabled = ref(false);
+const loading = ref(false);
+const padded = ref(true);
+const square = ref(false);
+const color = ref("primary");
+const optionColor = [
+  "neutral",
+  "primary",
+  "secondary",
+  "tertiary",
+  "success",
+  "warning",
+  "error",
+  "accent",
+];
+const variant = ref("solid");
+const optionVariant = [
+  {
+    label: "text (uxd)",
+    value: "text",
+  },
+  {
+    label: "contained (uxd) / solid (nuxtUi)",
+    value: "solid",
+  },
+  {
+    label: "outline (uxd,nuxtUi)",
+    value: "outline",
+  },
+  {
+    label: "soft (nuxtUi)",
+    value: "soft",
+  },
+  {
+    label: "ghost (nuxtUi)",
+    value: "ghost",
+  },
+  {
+    label: "link (nuxtUi)",
+    value: "link",
+  },
+  {
+    label: "icon (uxd)",
+    value: "icon",
+    disabled: true,
+  },
+];
+const size = ref("36");
+const optionSize = ["24", "32", "36", "44", "56", "72"];
+</script>
+
+<style scoped></style>

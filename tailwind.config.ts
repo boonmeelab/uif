@@ -12,6 +12,28 @@ export default {
     "./app.vue",
     "./error.vue",
   ],
+  safelist: [
+    {
+      pattern: /text-(neutral|primary|secondary|tertiary|success|warning|error)-(100|200|300|400|500|600|700|800|900)/,
+      variants: [
+        'hover',
+        'focus',
+        'active',
+        'focus',
+        'focus-visible',
+      ],
+    },
+    {
+      pattern: /bg-(neutral|primary|secondary|tertiary|success|warning|error)-(100|200|300|400|500|600|700|800|900)/,
+      variants: [
+        'hover',
+        'focus',
+        'active',
+        'focus',
+        'focus-visible',
+      ],
+    },
+  ],
   theme: {
     extend: {},
   },

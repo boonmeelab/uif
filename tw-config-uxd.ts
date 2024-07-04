@@ -211,6 +211,7 @@ const twUxd = plugin(
           "s-mobile": { max: "479px" },
         },
         colors: {
+          current: 'currentColor',
           neutral: {
             50: "#f2f2f2",
             100: "#d6d6d6",
