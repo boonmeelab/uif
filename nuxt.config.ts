@@ -14,7 +14,7 @@ export default defineNuxtConfig({
       "composables/*.{d.ts,ts,js,mjs,mts}",
     ],
   },
-  modules: ["@nuxt/ui", "@nuxtjs/google-fonts", "nuxt-lodash"],
+  modules: ["@nuxt/ui", "@nuxtjs/google-fonts", "nuxt-lodash", "@vueuse/nuxt"],
   colorMode: {
     preference: "light",
   },
