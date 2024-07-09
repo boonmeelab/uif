@@ -8,7 +8,7 @@
     >
       <UBadge variant="subtle">NuxtUI/Button</UBadge></a
     >
-    , Design Systems by BML-INT-UXD
+    , design systems by UXD
     <a
       href="https://www.figma.com/design/jQpNsc72oiEP08XREsYobw/BML-UXD?node-id=2310-19772&t=73wIgnZyW4Y0CbpJ-4"
       target="_blank"
@@ -252,7 +252,6 @@ const optionColor = [
   "success",
   "warning",
   "error",
-  "accent",
 ];
 const variant = ref("solid");
 const optionVariant = [
