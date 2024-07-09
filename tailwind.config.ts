@@ -17,7 +17,6 @@ export default {
       pattern: /text-(neutral|primary|secondary|tertiary|success|warning|error)-(100|200|300|400|500|600|700|800|900)/,
       variants: [
         'hover',
-        'focus',
         'active',
         'focus',
         'focus-visible',
