@@ -85,7 +85,6 @@
             :help="help"
             :color="color"
             :disabled="disabled"
-            class="maxxxxx"
           />
         </div>
       </section>
