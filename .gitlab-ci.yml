@@ -9,7 +9,7 @@ workflow:
   rules:
     # Run on branch commit, but not tag
     # Only run if branch is main or develop
-    - if: '$CI_COMMIT_BRANCH == "develop"'
+    - if: '$CI_COMMIT_BRANCH == "main"'
 
 build_frontend:
   stage: build
