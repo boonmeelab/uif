@@ -1,0 +1,26 @@
+default:
+  image: node:18-alpine
+
+stages:
+  - build
+
+# Condition to meet to run this pipeline
+workflow:
+  rules:
+    # Run on branch commit, but not tag
+    # Only run if branch is main or develop
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+
+build_frontend:
+  stage: build
+  variables:
+    CLOUDFLARE_API_TOKEN: $CLOUDFLARE_API_TOKEN
+    CLOUDFLARE_ACCOUNT_ID: $CLOUDFLARE_ACCOUNT_ID
+  script:
+    - echo "Building frontend..."
+    # - echo "$ENV_FRONTEND_STAGING" > .env
+    - export CLOUDFLARE_PROJECT_NAME=$CLOUDFLARE_PROJECT_NAME_STAGING
+    - npm ci
+    - NITRO_PRESET=cloudflare-pages npm run build || true
+    - echo "$CLOUDFLARE_PROJECT_NAME"
+    - npx wrangler pages deploy ./dist --project-name="$CLOUDFLARE_PROJECT_NAME" --branch="$CI_COMMIT_BRANCH" --commit-hash="$CI_COMMIT_SHA" --commit-message="$CI_COMMIT_MESSAGE"
