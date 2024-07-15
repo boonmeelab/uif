@@ -80,7 +80,6 @@
       <section class="mt-6">
         <div class="mt-3 flex gap-10">
           <UCheckbox
-            :data-size="size"
             :label="label"
             :help="help"
             :color="color"
@@ -99,7 +98,7 @@ definePageMeta({
 
 const disabled = ref(false);
 const label = ref("Label");
-const help = ref("Help");
+const help = ref("Description help");
 const size = ref("size-16");
 const optionSize = [
   "size-16",

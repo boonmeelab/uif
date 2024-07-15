@@ -116,17 +116,19 @@ export default defineAppConfig({
       },
     },
     checkbox: {
+      wrapper: 'relative flex items-start group',
       container: 'flex items-center h-auto',
       base: 'h-4 w-4 data-[size=size-16]:size-4 data-[size=size-24]:size-6 data-[size=size-32]:size-8 data-[size=size-36]:size-9 data-[size=size-44]:size-11 data-[size=size-56]:size-14 data-[size=size-72]:size-[72px] dark:checked:bg-current dark:checked:border-transparent dark:indeterminate:bg-current dark:indeterminate:border-transparent disabled:opacity-50 disabled:cursor-not-allowed focus:ring-0 focus:ring-transparent focus:ring-offset-transparent cursor-pointer',
       rounded: 'rounded-4 data-[size=size-16]:rounded-4 data-[size=size-24]:rounded-6 data-[size=size-32]:rounded-6 data-[size=size-36]:rounded-8 data-[size=size-44]:rounded-8 data-[size=size-56]:rounded-8 data-[size=size-72]:rounded-8',
       color: 'text-{color}-500 hover:border-{color}-500',
       background: 'bg-white disabled:bg-neutral-100',
-      border: 'border border-neutral-200 disabled:bg-neutral-500',
-      label: 'text-sm font-medium text-neutral-800',
-      help: 'text-sm text-neutral-500',
+      border: 'border border-neutral-200 disabled:border-neutral-200 disabled:bg-neutral-500',
+      label: 'text-sm text-black',
+      help: 'text-xs text-neutral-600',
       default: {
         color: 'primary',
       },
+    },
     popover: {
       wrapper: 'relative group',
       container: 'z-50 group',
