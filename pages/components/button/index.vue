@@ -152,7 +152,7 @@
           :padded="padded"
           :square="square"
           :disabled="disabled"
-          icon="i-heroicons-arrow-up-on-square-solid"
+          icon="i-heroicons-chevron-down-solid"
         ></UButton>
 
         <UButton

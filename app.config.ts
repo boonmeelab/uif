@@ -129,6 +129,19 @@ export default defineAppConfig({
         color: 'primary',
       },
     },
+    radio: {
+      wrapper: 'relative flex items-start',
+      container: 'flex items-center h-auto',
+      base: 'h-4 w-4 data-[size=size-16]:size-4 data-[size=size-24]:size-6 data-[size=size-32]:size-8 data-[size=size-36]:size-9 data-[size=size-44]:size-11 data-[size=size-56]:size-14 data-[size=size-72]:size-[72px] group-data-[size=size-16]:size-4 group-data-[size=size-24]:size-6 group-data-[size=size-32]:size-8 group-data-[size=size-36]:size-9 group-data-[size=size-44]:size-11 group-data-[size=size-56]:size-14 group-data-[size=size-72]:size-[72px] disabled:cursor-not-allowed focus:ring-0 focus:ring-transparent focus:ring-offset-transparent cursor-pointer',
+      border: 'border border-neutral-200 disabled:border-neutral-200 hover:border-{color}-500',
+      color: 'text-{color}-500 hover:drop-shadow-[0_0_10px_#F9BED6] disabled:drop-shadow-none disabled:text-neutral-500',
+      ring: 'focus-visible:ring-2 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900',
+      label: 'text-sm text-black leading-tight group-data-[size=size-16]:text-sm group-data-[size=size-24]:text-sm group-data-[size=size-32]:text-base group-data-[size=size-36]:text-xl group-data-[size=size-44]:text-2xl group-data-[size=size-56]:text-[34px] group-data-[size=size-72]:text-[60px]',
+      help: 'text-xs text-gray-600 leading-tight group-data-[size=size-16]:text-xs group-data-[size=size-24]:text-xs group-data-[size=size-32]:text-sm group-data-[size=size-36]:text-base group-data-[size=size-44]:text-base group-data-[size=size-56]:text-xl group-data-[size=size-72]:text-2xl',
+    },
+    radioGroup: {
+      fieldset: 'group flex flex-col gap-0.5',
+    },
     popover: {
       wrapper: 'relative group',
       container: 'z-50 group',
