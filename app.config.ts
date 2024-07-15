@@ -127,6 +127,21 @@ export default defineAppConfig({
       default: {
         color: 'primary',
       },
+    popover: {
+      wrapper: 'relative group',
+      container: 'z-50 group',
+      width: 'max-w-[260px]',
+      rounded: 'rounded-6',
+      background: 'bg-neutral-700 group-data-[color=white]:bg-white group-data-[color=black]:bg-neutral-700',
+      ring: 'group-data-[color=white]:ring-1 group-data-[color=white]:ring-neutral-500',
+      base: 'overflow-hidden focus:outline-none relative p-2 text-white group-data-[color=white]:text-neutral-700 group-data-[color=black]:text-white text-b-3',
+      arrow: {
+        base: 'invisible z-10 before:visible before:block before:rotate-45 before:z-[-1] before:w-2 before:h-2',
+        shadow: '',
+        ring: `before:border before:border-neutral-500 group-data-[popper-placement*='right']:before:border-t-transparent group-data-[popper-placement*='right']:before:border-r-transparent group-data-[popper-placement*='left']:before:border-l-transparent group-data-[popper-placement*='left']:before:border-b-transparent group-data-[popper-placement*='top']:before:border-t-transparent group-data-[popper-placement*='top']:before:border-l-transparent group-data-[popper-placement*='bottom']:before:border-r-transparent group-data-[popper-placement*='bottom']:before:border-b-transparent`,
+        background: 'before:bg-neutral-700 group-data-[color=white]:before:bg-white group-data-[color=black]:before:bg-neutral-700',
+        rounded: 'before:rounded-sm',
+      },
     }
   },
 });

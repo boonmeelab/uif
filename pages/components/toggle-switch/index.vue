@@ -103,7 +103,7 @@
               target="_blank"
             />
             by setting the
-            <UBadge color="gray" variant="solid">on-icon and</UBadge>
+            <UBadge color="gray" variant="solid">on-icon</UBadge> and
             <UBadge color="gray" variant="solid">off-icon</UBadge> props by
             using this pattern:
             <UBadge color="gray" variant="solid"

@@ -21,6 +21,10 @@ const components = _orderBy(
       label: "Checkbox",
       to: "/components/checkbox",
     },
+    {
+      label: "Tooltip/Popover",
+      to: "/components/tooltip-popover",
+    },
   ],
   "label",
   "asc",
