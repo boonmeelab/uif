@@ -29,6 +29,10 @@ const components = _orderBy(
       label: "Tooltip/Popover",
       to: "/components/tooltip-popover",
     },
+    {
+      label: "Badge",
+      to: "/components/badge",
+    },
   ],
   "label",
   "asc",
