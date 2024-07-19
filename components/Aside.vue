@@ -26,6 +26,10 @@ const components = _orderBy(
       to: "/components/radio",
     },
     {
+      label: "Text Field",
+      to: "/components/text-field",
+    },
+    {
       label: "Tooltip/Popover",
       to: "/components/tooltip-popover",
     },
