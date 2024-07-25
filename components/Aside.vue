@@ -37,6 +37,10 @@ const components = _orderBy(
       label: "Badge",
       to: "/components/badge",
     },
+    {
+      label: "Tabs",
+      to: "/components/tabs",
+    },
   ],
   "label",
   "asc",

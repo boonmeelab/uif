@@ -172,6 +172,30 @@ export default defineAppConfig({
       default: {
         size: '24',
       },
+    tabs: {
+      wrapper: 'w-fit relative space-y-2 group [&[fullWidth=]]:w-full [&[fullWidth=false]]:w-fit',
+      list: {
+        base: 'relative group',
+        width: 'w-full',
+        background: 'bg-neutral-50 group-[&[color=white][variant*=solid]]:bg-neutral-50 group-[&[color=black][variant*=solid]]:bg-neutral-600 group-[&[variant*=line]]:bg-transparent group-[&[variant*=line]]:bg-transparent',
+        rounded: 'rounded-lg group-[&[variant*=line]]:rounded-none',
+        padding: 'p-1 group-[&[variant*=line]]:p-0',
+        marker: {
+          wrapper: 'flex absolute top-[4px] left-[4px] duration-200 ease-out focus:outline-none group-[&[variant=line]]:z-10',
+          base: 'w-full h-full group-[&[variant*=line]]:h-1 group-[&[variant*=line]]:mt-auto',
+          background: 'bg-neutral-white group-[&[color=white]]:bg-white group-[&[color=black]]:bg-neutral-800',
+          rounded: 'rounded-md group-[&[variant*=line]]:rounded-none',
+          shadow: 'shadow-sm group-[&[variant*=line]]:shadow-none',
+        },
+        tab: {
+          base: 'relative inline-flex items-center justify-center flex-shrink-0 w-full disabled:cursor-not-allowed disabled:opacity-75 transition-colors duration-200 ease-out border-neutral-200 group-[&[variant=line]]:border-b',
+          padding: 'px-3',
+          rounded: 'rounded-md group-[&[variant*=line]]:rounded-none',
+          background: '',
+          active: 'text-white group-[&[color=white][variant*=solid]]:text-neutral-900 group-[&[color=white][variant*=line]]:text-white group-[&[color=white][variant*=line]]:text-white group-[&[color=black][variant*=solid]]:text-white group-[&[color=black][variant*=line]]:text-neutral-900',
+          inactive: 'text-neutral-700 hover:text-neutral-900 group-[&[color=white][variant*=solid]]:text-neutral-700 group-[&[color=white][variant*=line]]:text-neutral-50 group-[&[color=white][variant*=solid]]:hover:text-neutral-900 group-[&[color=white][variant*=line]]:hover:text-white group-[&[color=black][variant*=solid]]:text-neutral-50 group-[&[color=black][variant*=solid]]:hover:text-white group-[&[color=black][variant*=line]]:text-neutral-900 group-[&[color=black][variant*=line]]:hover:text-neutral-900',
+        },
+      },
     }
   },
 });
