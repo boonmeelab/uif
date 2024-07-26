@@ -18,7 +18,7 @@
     >
   </Header>
 
-  <div class="py-10">
+  <div class="pb-20 pt-10">
     <div class="mb-3 flex flex-col gap-3">
       <h6 class="font-semibold">Config Settings</h6>
     </div>
@@ -39,9 +39,11 @@
 
         <template #help>
           <p>
-            Change the size of the Button. The unit is
+            Change the size of the Button. Affects to
+            <UBadge color="gray" variant="solid">height</UBadge> and
+            <UBadge color="gray" variant="solid">font-size</UBadge>, unit is
             <UBadge color="gray" variant="solid">px</UBadge> <br />
-            default: <UBadge color="gray" variant="solid">36px</UBadge>
+            default: <UBadge color="gray" variant="solid">36</UBadge>
           </p>
         </template>
       </UFormGroup>
@@ -57,7 +59,7 @@
         </template>
       </UFormGroup>
 
-      <UFormGroup label="Variant">
+      <UFormGroup label="Variant" class="col-span-2">
         <USelectMenu
           v-model="variant"
           :options="optionVariant"
@@ -67,29 +69,18 @@
         <template #help>
           <p>
             Change the visual style of the Button. <br />
-            default: <UBadge color="gray" variant="solid">solid</UBadge>
+            <UBadge color="gray" variant="solid">text</UBadge>(uxd),
+            <UBadge color="gray" variant="solid">contained</UBadge>(uxd)/<UBadge
+              color="gray"
+              variant="solid"
+              >solid</UBadge
+            >(<span class="font-semibold">default</span>)(nuxtUi),
+            <UBadge color="gray" variant="solid">outline</UBadge>(uxd,nuxtUi),
+            <UBadge color="gray" variant="solid">soft</UBadge>(nuxtUi),
+            <UBadge color="gray" variant="solid">ghost</UBadge>(nuxtUi),
+            <UBadge color="gray" variant="solid">link</UBadge>(nuxtUi),
+            <UBadge color="gray" variant="solid">icon</UBadge>(uxd)
           </p>
-        </template>
-      </UFormGroup>
-
-      <div />
-
-      <UFormGroup>
-        <template #label>
-          <UCheckbox v-model="trailing" name="Trailing" label="trailing" />
-        </template>
-
-        <template #help>
-          <p>
-            set the icon position. default:
-            <UBadge color="gray" variant="solid">leading</UBadge>
-          </p>
-        </template>
-      </UFormGroup>
-
-      <UFormGroup>
-        <template #label>
-          <UCheckbox v-model="disabled" name="Disabled" label="disabled" />
         </template>
       </UFormGroup>
 
@@ -130,6 +121,25 @@
           Force the Button to have the same padding horizontally and vertically.
           suitable for variant
           <UBadge color="gray" variant="solid">Action Button</UBadge>
+        </template>
+      </UFormGroup>
+
+      <UFormGroup>
+        <template #label>
+          <UCheckbox v-model="trailing" name="Trailing" label="trailing" />
+        </template>
+
+        <template #help>
+          <p>
+            set the icon position. default:
+            <UBadge color="gray" variant="solid">leading</UBadge>
+          </p>
+        </template>
+      </UFormGroup>
+
+      <UFormGroup>
+        <template #label>
+          <UCheckbox v-model="disabled" name="Disabled" label="disabled" />
         </template>
       </UFormGroup>
     </section>
@@ -256,31 +266,31 @@ const optionColor = [
 const variant = ref("solid");
 const optionVariant = [
   {
-    label: "text (uxd)",
+    label: "text",
     value: "text",
   },
   {
-    label: "contained (uxd) / solid (nuxtUi)",
+    label: "solid",
     value: "solid",
   },
   {
-    label: "outline (uxd,nuxtUi)",
+    label: "outline",
     value: "outline",
   },
   {
-    label: "soft (nuxtUi)",
+    label: "soft",
     value: "soft",
   },
   {
-    label: "ghost (nuxtUi)",
+    label: "ghost",
     value: "ghost",
   },
   {
-    label: "link (nuxtUi)",
+    label: "link",
     value: "link",
   },
   {
-    label: "icon (uxd)",
+    label: "icon",
     value: "icon",
     disabled: true,
   },

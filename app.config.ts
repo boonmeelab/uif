@@ -54,6 +54,11 @@ export default defineAppConfig({
           "72": "h-[22px] w-[22px]",
         },
       },
+      color: {
+        gray: {
+          icon: 'text-neutral-600 hover:text-neutral-700',
+        },
+      },
       variant: {
         text: 'text-{color}-500 bg-transparent hover:text-white hover:bg-{color}-200 active:bg-{color}-400 active:text-white forcus-visible:text-white focus-visible:text-white focus-visible:bg-{color}-500 disabled:bg-transparent disabled:text-neutral-300',
         solid: 'text-white bg-{color}-500 hover:bg-{color}-700 disabled:text-white disabled:bg-neutral-300 active:bg-{color}-800 focus-visible:text-{color}-500 focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-current focus-visible:ring-{color}-500 focus-visible:bg-{color}-200',
