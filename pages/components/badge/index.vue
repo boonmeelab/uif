@@ -12,7 +12,7 @@
       >
     </Header>
 
-    <div class="py-10">
+    <div class="pb-20 pt-10">
       <div class="mb-3 flex flex-col gap-3">
         <h6 class="font-semibold">Config Settings</h6>
       </div>
@@ -48,8 +48,15 @@
 
           <template #help>
             <p>
-              Change the visual style of the Button. <br />
-              default: <UBadge color="gray" variant="solid">solid</UBadge>
+              Change the visual style of the Badge.<br />
+              NuxtUi value:
+              <UBadge color="gray" variant="solid">solid</UBadge> (default),
+              <UBadge color="gray" variant="solid">outline</UBadge>,
+              <UBadge color="gray" variant="solid">soft</UBadge>,
+              <UBadge color="gray" variant="solid">subtle</UBadge>
+              <br />
+              Custom: <UBadge color="gray" variant="solid">color-white</UBadge>,
+              <UBadge color="gray" variant="solid">black-color</UBadge>
             </p>
           </template>
         </UFormGroup>
@@ -61,7 +68,7 @@
             <p>
               Change the size of the Badge. The unit is
               <UBadge color="gray" variant="solid">px</UBadge> <br />
-              default: <UBadge color="gray" variant="solid">24px</UBadge>
+              default: <UBadge color="gray" variant="solid">24</UBadge>
             </p>
           </template>
         </UFormGroup>
@@ -74,7 +81,10 @@
           <template #help>
             <p>
               To customize the border radius of the Badge, you can use the
-              <UBadge color="gray" variant="solid">ui</UBadge> prop.
+              <UBadge color="gray" variant="solid">ui</UBadge> prop.<br />
+              <UBadge color="gray" variant="solid"
+                >:ui="{ rounded: 'rounded-full' }"</UBadge
+              >
             </p>
           </template>
         </UFormGroup>
@@ -193,8 +203,8 @@ const optionVariant = [
     value: "color-white",
   },
   {
-    label: "balck-color",
-    value: "balck-color",
+    label: "black-color",
+    value: "black-color",
   },
 ];
 </script>

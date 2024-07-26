@@ -167,7 +167,7 @@ export default defineAppConfig({
       },
       variant: {
         'color-white': 'text-{color}-500 bg-white',
-        'balck-color': 'text-neutral-950 bg-{color}-500',
+        'black-color': 'text-neutral-950 bg-{color}-500',
       },
       default: {
         size: '24',
