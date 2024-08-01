@@ -49,7 +49,7 @@
 
           <template #help>
             <p>
-              Add this
+              Add
               <UBadge color="gray" variant="solid">variant="solid"</UBadge>
               to the component or if not enter any values, it will be equal to
               <UBadge color="gray" variant="solid">solid</UBadge>
@@ -101,13 +101,6 @@
             :variant="variant"
             :fullWidth="fullWidth"
           >
-            <template #default="{ item, index, selected }">
-              <div class="relative flex items-center gap-2 truncate">
-                <UIcon :name="item.icon" class="h-4 w-4 flex-shrink-0" />
-
-                <span class="truncate">{{ index + 1 }}. {{ item.label }}</span>
-              </div>
-            </template>
           </UTabs>
         </div>
       </section>

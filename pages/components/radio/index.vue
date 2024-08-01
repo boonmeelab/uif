@@ -19,7 +19,7 @@
       >
     </Header>
 
-    <div class="py-10">
+    <div class="pb-20 pt-10">
       <div class="mb-3 flex flex-col gap-3">
         <h6 class="font-semibold">Config Settings</h6>
       </div>
@@ -52,13 +52,12 @@
 
           <template #help>
             <p>
-              <span class="font-semibold">Data attributes</span> add
-              <UBadge color="gray" variant="solid">size-*</UBadge> into
-              <UBadge color="gray" variant="solid">data-size=""</UBadge> is the
-              format of <span class="font-semibold">UIF</span>
+              Add <span class="font-semibold">attributes</span>
+              <UBadge color="gray" variant="solid">size</UBadge> into URadio
+              component
               <br />
               default:
-              <UBadge color="gray" variant="solid">:data-size="size-16"</UBadge>
+              <UBadge color="gray" variant="solid">data="size-16"</UBadge>
             </p>
           </template>
         </UFormGroup>
@@ -92,7 +91,7 @@
           <URadio
             :label="label"
             :help="help"
-            :data-size="size"
+            :size="size"
             :color="color"
             :disabled="disabled"
           />
@@ -107,7 +106,7 @@
             v-model="selected"
             :options="options"
             :legend="legend"
-            :data-size="size"
+            :size="size"
             :color="color"
             :disabled="disabled"
           />

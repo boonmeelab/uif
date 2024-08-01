@@ -19,7 +19,7 @@
       >
     </Header>
 
-    <div class="py-10">
+    <div class="pb-20 pt-10">
       <div class="mb-3 flex flex-col gap-3">
         <h6 class="font-semibold">Config Settings</h6>
       </div>
@@ -44,13 +44,13 @@
 
           <template #help>
             <p>
-              <span class="font-semibold">Data attributes</span> add
-              <UBadge color="gray" variant="solid">size-*</UBadge> into
-              <UBadge color="gray" variant="solid">data-size=""</UBadge> is the
-              format of <span class="font-semibold">UIF</span>
+              Custom checkbox size by ui config
+              <UBadge color="gray" variant="solid">
+                <code class="whitespace-pre">{{ ui }}</code>
+              </UBadge>
               <br />
               default:
-              <UBadge color="gray" variant="solid">:data-size="size-16"</UBadge>
+              <UBadge color="gray" variant="solid">16</UBadge>
             </p>
           </template>
         </UFormGroup>
@@ -80,6 +80,7 @@
       <section class="mt-6">
         <div class="mt-3 flex gap-10">
           <UCheckbox
+            :ui="ui"
             :label="label"
             :help="help"
             :color="color"
@@ -99,16 +100,8 @@ definePageMeta({
 const disabled = ref(false);
 const label = ref("Label");
 const help = ref("Description help");
-const size = ref("size-16");
-const optionSize = [
-  "size-16",
-  "size-24",
-  "size-32",
-  "size-36",
-  "size-44",
-  "size-56",
-  "size-72",
-];
+const size = ref("16");
+const optionSize = ["16", "24", "32", "36", "44", "56", "72"];
 const color = ref("primary");
 const optionColor = [
   "neutral",
@@ -119,6 +112,60 @@ const optionColor = [
   "warning",
   "error",
 ];
+
+const ui = computed(() => {
+  switch (size.value) {
+    case "16":
+      return {
+        base: "size-4 ring-0",
+        rounded: "rounded-4",
+        label: "text-sm",
+        help: "text-xs",
+      };
+    case "24":
+      return {
+        base: "size-6",
+        rounded: "rounded-6",
+        label: "text-base",
+        help: "text-sm",
+      };
+    case "32":
+      return {
+        base: "size-8",
+        rounded: "rounded-6",
+        label: "text-base",
+        help: "text-sm",
+      };
+    case "36":
+      return {
+        base: "size-9",
+        rounded: "rounded-8",
+        label: "text-xl",
+        help: "text-base",
+      };
+    case "44":
+      return {
+        base: "size-11",
+        rounded: "rounded-8",
+        label: "text-2xl",
+        help: "text-base",
+      };
+    case "56":
+      return {
+        base: "size-14",
+        rounded: "rounded-8",
+        label: "text-[34px]",
+        help: "text-2xl",
+      };
+    case "72":
+      return {
+        base: "size-[72px]",
+        rounded: "rounded-8",
+        label: "text-[60px]",
+        help: "text-2xl",
+      };
+  }
+});
 </script>
 
 <style scoped></style>

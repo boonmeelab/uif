@@ -20,7 +20,7 @@
       >
     </Header>
 
-    <div class="py-10">
+    <div class="pb-20 pt-10">
       <div class="mb-3 flex flex-col gap-3">
         <h6 class="font-semibold">Config Settings</h6>
       </div>
@@ -29,7 +29,7 @@
         <UFormGroup label="Mode">
           <template #description>
             Use the mode prop to control the behavior tooltip <br />
-            default: <UBadge color="gray" variant="solid">click</UBadge>
+            default: <UBadge color="gray" variant="solid">hover</UBadge>
           </template>
           <URadioGroup
             v-model="mode"
@@ -48,12 +48,12 @@
 
         <UFormGroup>
           <template #label>
-            <UCheckbox
-              v-model="arrow"
-              label="Arrow"
-              help="Show arrow tooltip, Cannot be used with hover mode."
-              @change="changeArrow"
-            />
+            <UCheckbox v-model="arrow" label="Arrow" @change="changeArrow">
+              <template #help>
+                Show arrow tooltip, Cannot be used with
+                <UBadge color="gray" variant="solid">hover</UBadge> mode
+              </template>
+            </UCheckbox>
           </template>
         </UFormGroup>
 
@@ -105,7 +105,7 @@
               v-if="renderUi"
               :mode="mode"
               :overlay="overlay"
-              :data-color="color"
+              :color="color"
               :popper="{ arrow, placement, offsetDistance: offset }"
             >
               <Icon
@@ -123,7 +123,7 @@
             v-if="renderUi"
             :mode="mode"
             :overlay="overlay"
-            :data-color="color"
+            :color="color"
             :popper="{ arrow, placement, offsetDistance: offset }"
           >
             <UButton label="Hover or Click" />
@@ -192,6 +192,12 @@ watch([placement, offset, arrow], () => {
   setTimeout(() => {
     renderUi.value = true;
   }, 0);
+});
+
+watch(mode, (val) => {
+  if (val === "hover" && arrow.value) {
+    arrow.value = false;
+  }
 });
 
 const changeArrow = () => {
