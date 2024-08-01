@@ -19,7 +19,7 @@
       >
     </Header>
 
-    <div class="pb- pb-20 pt-10">
+    <div class="pb-20 pt-10">
       <div class="mb-3 flex flex-col gap-3">
         <h6 class="font-semibold">Config Settings</h6>
       </div>
@@ -68,6 +68,18 @@
         </UFormGroup>
 
         <div />
+
+        <UFormGroup>
+          <template #label>
+            <UCheckbox v-model="fullWidth" label="Full Width" />
+          </template>
+          <template #help>
+            Custom input width by ui config
+            <UBadge color="gray" variant="solid">
+              <code class="whitespace-pre">{ wrapper: "w-full" }</code>
+            </UBadge>
+          </template>
+        </UFormGroup>
 
         <UFormGroup>
           <template #label>
@@ -127,6 +139,7 @@
             :disabled="disabled"
             :padded="padded"
             :loading="loading"
+            :ui="ui"
           >
           </UInput>
 
@@ -141,6 +154,7 @@
             :disabled="disabled"
             :padded="padded"
             :loading="loading"
+            :ui="ui"
           />
         </div>
       </section>
@@ -168,6 +182,7 @@
             :disabled="disabled"
             :padded="padded"
             :loading="loading"
+            :ui="ui"
           >
             <template #leading>
               <UAvatar
@@ -202,6 +217,7 @@
             :disabled="disabled"
             :padded="padded"
             :loading="loading"
+            :ui="ui"
           >
             <template #trailing>
               <span class="text-xs text-gray-500 dark:text-gray-400">EUR</span>
@@ -246,7 +262,7 @@
             :padded="padded"
             :loading="loading"
             icon="i-heroicons-magnifying-glass-20-solid"
-            :ui="{ icon: { trailing: { pointer: '' } } }"
+            :ui="{ ...ui, icon: { trailing: { pointer: '' } } }"
           >
             <template #trailing>
               <UButton
@@ -278,6 +294,7 @@ const placeholder = ref("Search...");
 const loading = ref(false);
 const disabled = ref(false);
 const padded = ref(true);
+const fullWidth = ref(false);
 const size = ref("32");
 const optionSize = ["24", "28", "32", "36", "40", "44"];
 const color = ref("white");
@@ -311,6 +328,14 @@ const optionVariant = [
     value: "underline",
   },
 ];
+
+const ui = computed(() => {
+  return fullWidth.value
+    ? {
+        wrapper: "w-full",
+      }
+    : {};
+});
 </script>
 
 <style scoped></style>
