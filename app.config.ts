@@ -4,6 +4,21 @@ import { mergeConfig } from "#ui/utils";
 let strategy: Strategy | undefined = undefined
 
 const defaultConfig = {
+  badge: {
+    size: {
+      '20': 'text-xs px-1.5 py-0.5',
+      '24': 'text-xs px-2 py-1',
+      '28': 'text-sm px-2 py-1',
+      '32': 'text-sm px-2.5 py-1.5',
+    },
+    variant: {
+      'color-white': 'text-{color}-500 bg-white',
+      'black-color': 'text-neutral-950 bg-{color}-500',
+    },
+    default: {
+      size: '24',
+    },
+  },
   button: {
     default: {
       size: "36",
@@ -68,59 +83,6 @@ const defaultConfig = {
       icon: 'h-fit min-h-fit text-{color}-500 hover:text-{color}-700 active:text-{color}-400 focus-visible:text-{color}-500 disabled:text-neutral-300',
     },
   },
-  toggle: {
-    base: 'group disabled:opacity-100 disabled:bg-neutral-200',
-    inactive: 'bg-neutral-500',
-    size: {
-      '16': 'h-4 w-7',
-      '24': 'h-6 w-11',
-      '32': 'h-8 w-[60px]',
-      '36': 'h-9 w-[68px]',
-      '44': 'h-11 w-[84px]',
-      '56': 'h-14 w-[108px]',
-      '72': 'h-[72px] w-[140px]',
-    },
-    container: {
-      base: 'bg-white shadow-md group-disabled:bg-neutral-100',
-      active: {
-        '16': 'translate-x-3 rtl:-translate-x-3',
-        '24': 'translate-x-5 rtl:-translate-x-5',
-        '32': 'translate-x-7 rtl:-translate-x-7',
-        '36': 'translate-x-8 rtl:-translate-x-8',
-        '44': 'translate-x-10 rtl:-translate-x-10',
-        '56': 'translate-x-[52px] rtl:-translate-x-[52px]',
-        '72': 'translate-x-[68px] rtl:-translate-x-[68px]',
-      },
-      size: {
-        '16': 'size-3',
-        '24': 'size-5',
-        '32': 'size-7',
-        '36': 'size-8',
-        '44': 'size-10',
-        '56': 'size-[52px]',
-        '72': 'size-[68px]',
-      },
-    },
-    icon: {
-      size: {
-        '16': 'size-3',
-        '24': 'size-3.5',
-        '32': 'size-[22px]',
-        '36': 'size-[25px]',
-        '44': 'size-7',
-        '56': 'size-9',
-        '72': 'size-11',
-      },
-      on: 'text-{color}-500 disabled:text-neutral-500',
-      off: 'text-neutral-500',
-      loading: 'animate-none text-{color}-500 disabled:text-neutral-500',
-    },
-    default: {
-      loadingIcon: 'i-svg-spinners-ring-resize',
-      color: 'primary',
-      size: '24',
-    },
-  },
   checkbox: {
     wrapper: 'relative flex items-start group',
     container: 'flex items-center h-auto',
@@ -134,48 +96,19 @@ const defaultConfig = {
       color: 'primary',
     },
   },
-  radio: {
-    wrapper: 'relative flex items-start',
-    container: 'flex items-center h-auto',
-    base: 'h-4 w-4 relative group-[&[size=size-16]:size-4 group-[&[size=size-24]]:size-6 group-[&[size=size-32]]:size-8 group-[&[size=size-36]]:size-9 group-[&[size=size-44]]:size-11 group-[&[size=size-56]]:size-14 group-[&[size=size-72]]:size-[72px] disabled:cursor-not-allowed focus:ring-0 focus:ring-transparent focus:ring-offset-transparent cursor-pointer after:invisible after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:size-1/2 after:rounded-full checked:after:visible checked:after:block checked:border-{color}-500',
-    border: 'border border-neutral-200',
-    color: 'text-transparent after:bg-{color}-500 disabled:after:bg-neutral-500 hover:drop-shadow-[0_0_10px_#F9BED6] hover:border-{color}-500 disabled:drop-shadow-none disabled:text-neutral-500 disabled:bg-neutral-100 disabled:border-neutral-400',
-    ring: 'focus-visible:ring-2 focus-visible:ring-{color}-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white',
-    label: 'text-sm text-black font-normal leading-tight group-[&[size=size-16]:text-sm group-[&[size=size-24]]:text-sm group-[&[size=size-32]]:text-base group-[&[size=size-36]]:text-xl group-[&[size=size-44]]:text-2xl group-[&[size=size-56]]:text-[34px] group-[&[size=size-72]]:text-[60px]',
-    help: 'text-xs text-gray-600 leading-tight group-[&[size=size-16]:text-xs group-[&[size=size-24]]:text-xs group-[&[size=size-32]]:text-sm group-[&[size=size-36]]:text-base group-[&[size=size-44]]:text-base group-[&[size=size-56]]:text-xl group-[&[size=size-72]]:text-2xl',
-  },
-  radioGroup: {
-    fieldset: 'group flex flex-col gap-0.5',
-  },
-  popover: {
-    wrapper: 'group',
-    container: 'group',
-    width: 'max-w-[260px]',
-    rounded: 'rounded-md',
-    background: 'bg-neutral-700 group-[&[color=white]]:bg-white group-[&[color=black]]:bg-neutral-700',
-    ring: 'ring-0 group-[&[color=white]]:ring-1 ring-neutral-500',
-    base: 'p-2 text-white group-[&[color=white]]:text-neutral-700 group-[&[color=black]]:text-white text-b-3',
-    arrow: {
-      base: 'z-10 before:w-2 before:h-2',
-      shadow: 'before:shadow-none',
-      ring: `before:ring-0 before:border group-[&[color=black]]:before:border-none before:border-neutral-500 group-data-[popper-placement*='right']:before:border-t-transparent group-data-[popper-placement*='right']:before:border-r-transparent group-data-[popper-placement*='left']:before:border-l-transparent group-data-[popper-placement*='left']:before:border-b-transparent group-data-[popper-placement*='top']:before:border-t-transparent group-data-[popper-placement*='top']:before:border-l-transparent group-data-[popper-placement*='bottom']:before:border-r-transparent group-data-[popper-placement*='bottom']:before:border-b-transparent`,
-      background: 'before:bg-neutral-700 group-[&[color=white]]:before:bg-white group-[&[color=black]]:before:bg-neutral-700',
-    },
-  },
-  badge: {
+  formGroup: {
     size: {
-      '20': 'text-xs px-1.5 py-0.5',
-      '24': 'text-xs px-2 py-1',
-      '28': 'text-sm px-2 py-1',
-      '32': 'text-sm px-2.5 py-1.5',
+      "12": 'text-xs',
+      "14": 'text-sm',
+      "16": 'text-base',
     },
-    variant: {
-      'color-white': 'text-{color}-500 bg-white',
-      'black-color': 'text-neutral-950 bg-{color}-500',
+    label: {
+      base: 'text-neutral-900',
     },
-    default: {
-      size: '24',
-    },
+    description: 'text-neutral-600',
+    hint: 'text-neutral-600',
+    help: 'text-neutral-600',
+    error: 'text-error-500',
   },
   input: {
     base: 'disabled:opacity-70',
@@ -277,6 +210,87 @@ const defaultConfig = {
       loadingIcon: 'i-svg-spinners-90-ring-with-bg',
     },
   },
+  popover: {
+    wrapper: 'group',
+    container: 'group',
+    width: 'max-w-[260px]',
+    rounded: 'rounded-md',
+    background: 'bg-neutral-700 group-[&[color=white]]:bg-white group-[&[color=black]]:bg-neutral-700',
+    ring: 'ring-0 group-[&[color=white]]:ring-1 ring-neutral-500',
+    base: 'p-2 text-white group-[&[color=white]]:text-neutral-700 group-[&[color=black]]:text-white text-b-3',
+    arrow: {
+      base: 'z-10 before:w-2 before:h-2',
+      shadow: 'before:shadow-none',
+      ring: `before:ring-0 before:border group-[&[color=black]]:before:border-none before:border-neutral-500 group-data-[popper-placement*='right']:before:border-t-transparent group-data-[popper-placement*='right']:before:border-r-transparent group-data-[popper-placement*='left']:before:border-l-transparent group-data-[popper-placement*='left']:before:border-b-transparent group-data-[popper-placement*='top']:before:border-t-transparent group-data-[popper-placement*='top']:before:border-l-transparent group-data-[popper-placement*='bottom']:before:border-r-transparent group-data-[popper-placement*='bottom']:before:border-b-transparent`,
+      background: 'before:bg-neutral-700 group-[&[color=white]]:before:bg-white group-[&[color=black]]:before:bg-neutral-700',
+    },
+  },
+  radio: {
+    wrapper: 'relative flex items-start',
+    container: 'flex items-center h-auto',
+    base: 'h-4 w-4 relative group-[&[size=size-16]:size-4 group-[&[size=size-24]]:size-6 group-[&[size=size-32]]:size-8 group-[&[size=size-36]]:size-9 group-[&[size=size-44]]:size-11 group-[&[size=size-56]]:size-14 group-[&[size=size-72]]:size-[72px] disabled:cursor-not-allowed focus:ring-0 focus:ring-transparent focus:ring-offset-transparent cursor-pointer after:invisible after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:size-1/2 after:rounded-full checked:after:visible checked:after:block checked:border-{color}-500',
+    border: 'border border-neutral-200',
+    color: 'text-transparent after:bg-{color}-500 disabled:after:bg-neutral-500 hover:drop-shadow-[0_0_10px_#F9BED6] hover:border-{color}-500 disabled:drop-shadow-none disabled:text-neutral-500 disabled:bg-neutral-100 disabled:border-neutral-400',
+    ring: 'focus-visible:ring-2 focus-visible:ring-{color}-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white',
+    label: 'text-sm text-black font-normal leading-tight group-[&[size=size-16]:text-sm group-[&[size=size-24]]:text-sm group-[&[size=size-32]]:text-base group-[&[size=size-36]]:text-xl group-[&[size=size-44]]:text-2xl group-[&[size=size-56]]:text-[34px] group-[&[size=size-72]]:text-[60px]',
+    help: 'text-xs text-gray-600 leading-tight group-[&[size=size-16]:text-xs group-[&[size=size-24]]:text-xs group-[&[size=size-32]]:text-sm group-[&[size=size-36]]:text-base group-[&[size=size-44]]:text-base group-[&[size=size-56]]:text-xl group-[&[size=size-72]]:text-2xl',
+  },
+  radioGroup: {
+    fieldset: 'group flex flex-col gap-0.5',
+  },
+  toggle: {
+    base: 'group disabled:opacity-100 disabled:bg-neutral-200',
+    inactive: 'bg-neutral-500',
+    size: {
+      '16': 'h-4 w-7',
+      '24': 'h-6 w-11',
+      '32': 'h-8 w-[60px]',
+      '36': 'h-9 w-[68px]',
+      '44': 'h-11 w-[84px]',
+      '56': 'h-14 w-[108px]',
+      '72': 'h-[72px] w-[140px]',
+    },
+    container: {
+      base: 'bg-white shadow-md group-disabled:bg-neutral-100',
+      active: {
+        '16': 'translate-x-3 rtl:-translate-x-3',
+        '24': 'translate-x-5 rtl:-translate-x-5',
+        '32': 'translate-x-7 rtl:-translate-x-7',
+        '36': 'translate-x-8 rtl:-translate-x-8',
+        '44': 'translate-x-10 rtl:-translate-x-10',
+        '56': 'translate-x-[52px] rtl:-translate-x-[52px]',
+        '72': 'translate-x-[68px] rtl:-translate-x-[68px]',
+      },
+      size: {
+        '16': 'size-3',
+        '24': 'size-5',
+        '32': 'size-7',
+        '36': 'size-8',
+        '44': 'size-10',
+        '56': 'size-[52px]',
+        '72': 'size-[68px]',
+      },
+    },
+    icon: {
+      size: {
+        '16': 'size-3',
+        '24': 'size-3.5',
+        '32': 'size-[22px]',
+        '36': 'size-[25px]',
+        '44': 'size-7',
+        '56': 'size-9',
+        '72': 'size-11',
+      },
+      on: 'text-{color}-500 disabled:text-neutral-500',
+      off: 'text-neutral-500',
+      loading: 'animate-none text-{color}-500 disabled:text-neutral-500',
+    },
+    default: {
+      loadingIcon: 'i-svg-spinners-ring-resize',
+      color: 'primary',
+      size: '24',
+    },
+  },
   tabs: {
     wrapper: 'w-fit group [&[fullWidth=]]:w-full [&[fullWidth=false]]:w-fit',
     list: {
@@ -299,7 +313,7 @@ const defaultConfig = {
         inactive: 'text-neutral-700 hover:text-neutral-900 group-[&[color=white][variant*=solid]]:text-neutral-700 group-[&[color=white][variant*=line]]:text-neutral-50 group-[&[color=white][variant*=solid]]:hover:text-neutral-900 group-[&[color=white][variant*=line]]:hover:text-white group-[&[color=black][variant*=solid]]:text-neutral-50 group-[&[color=black][variant*=solid]]:hover:text-white group-[&[color=black][variant*=line]]:text-neutral-900 group-[&[color=black][variant*=line]]:hover:text-neutral-900',
       },
     },
-  }
+  },
 }
 
 const customConfig = {}

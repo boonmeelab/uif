@@ -41,6 +41,10 @@ const components = _orderBy(
       label: "Tabs",
       to: "/components/tabs",
     },
+    {
+      label: "Form Group",
+      to: "/components/form",
+    },
   ],
   "label",
   "asc",

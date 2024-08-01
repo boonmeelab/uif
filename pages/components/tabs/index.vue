@@ -11,7 +11,7 @@
       >
     </Header>
 
-    <div class="pb- pb-20 pt-10">
+    <div class="pb-20 pt-10">
       <div class="mb-3 flex flex-col gap-3">
         <h6 class="font-semibold">Config Settings</h6>
       </div>
