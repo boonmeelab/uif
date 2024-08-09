@@ -52,12 +52,10 @@
 
           <template #help>
             <p>
-              Add <span class="font-semibold">attributes</span>
-              <UBadge color="gray" variant="solid">size</UBadge> into URadio
-              component
+              Custom radio size by ui config
               <br />
               default:
-              <UBadge color="gray" variant="solid">data="size-16"</UBadge>
+              <UBadge color="gray" variant="solid">16</UBadge>
             </p>
           </template>
         </UFormGroup>
@@ -92,8 +90,8 @@
             :label="label"
             :help="help"
             :size="size"
-            :color="color"
             :disabled="disabled"
+            :ui="size.value"
           />
         </div>
       </section>
@@ -106,8 +104,6 @@
             v-model="selected"
             :options="options"
             :legend="legend"
-            :size="size"
-            :color="color"
             :disabled="disabled"
           />
         </div>
@@ -117,6 +113,16 @@
 </template>
 
 <script setup lang="ts">
+import {
+  size16,
+  size24,
+  size32,
+  size36,
+  size44,
+  size56,
+  size72,
+} from "~/config/ui/radio/template/size";
+
 definePageMeta({
   layout: "components",
 });
@@ -126,16 +132,16 @@ const disabled = ref(false);
 const label = ref("Label");
 const help = ref("Description help");
 const legend = ref("Choose something");
-const size = ref("size-16");
 const optionSize = [
-  "size-16",
-  "size-24",
-  "size-32",
-  "size-36",
-  "size-44",
-  "size-56",
-  "size-72",
+  { label: "16", value: size16 },
+  { label: "24", value: size24 },
+  { label: "32", value: size32 },
+  { label: "36", value: size36 },
+  { label: "44", value: size44 },
+  { label: "56", value: size56 },
+  { label: "72", value: size72 },
 ];
+const size = ref(optionSize[0]);
 const color = ref("primary");
 const optionColor = [
   "neutral",
@@ -147,23 +153,23 @@ const optionColor = [
   "error",
 ];
 
-const options = [
+const options = computed(() => [
   {
     value: "email",
     label: "Email",
-    help: "Please choose one",
+    help: help.value,
   },
   {
     value: "sms",
     label: "Phone (SMS)",
-    help: "Please choose one",
+    help: help.value,
   },
   {
     value: "push",
     label: "Push notification",
-    help: "Please choose one",
+    help: help.value,
   },
-];
+]);
 </script>
 
 <style scoped></style>

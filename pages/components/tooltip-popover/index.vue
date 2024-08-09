@@ -101,11 +101,11 @@
       <section class="mt-6">
         <div class="mt-3 flex flex-col items-center justify-center gap-20">
           <div class="flex items-center gap-3">
+            <!-- :ui="color.value" -->
             <UPopover
               v-if="renderUi"
               :mode="mode"
               :overlay="overlay"
-              :color="color"
               :popper="{ arrow, placement, offsetDistance: offset }"
             >
               <Icon
@@ -123,7 +123,7 @@
             v-if="renderUi"
             :mode="mode"
             :overlay="overlay"
-            :color="color"
+            :ui="color.value"
             :popper="{ arrow, placement, offsetDistance: offset }"
           >
             <UButton label="Hover or Click" />
@@ -136,14 +136,7 @@
               </p>
 
               <div class="mt-4 flex justify-between">
-                <UButton
-                  label="Button"
-                  color="white"
-                  size="24"
-                  variant="link"
-                  :padded="false"
-                  >Learn</UButton
-                >
+                <UButton label="Button" size="24" variant="link">Learn</UButton>
 
                 <UButton label="Button" color="white" size="24" />
               </div>
@@ -156,6 +149,8 @@
 </template>
 
 <script setup lang="ts">
+import { white, black } from "~/config/ui/popover/template/color";
+
 definePageMeta({
   layout: "components",
 });
@@ -165,8 +160,17 @@ const overlay = ref(false);
 const arrow = ref(false);
 const offset = ref(6);
 const renderUi = ref(true);
-const color = ref("black");
-const optionColor = ["white", "black"];
+const optionColor = [
+  {
+    label: "white",
+    value: white,
+  },
+  {
+    label: "black",
+    value: black,
+  },
+];
+const color = ref(optionColor[0]);
 const placement = ref("bottom");
 const optionPlacement = ref([
   "auto",

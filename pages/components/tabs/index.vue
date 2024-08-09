@@ -41,11 +41,7 @@
         </UFormGroup>
 
         <UFormGroup label="Variant">
-          <USelectMenu
-            v-model="variant"
-            :options="optionVariant"
-            value-attribute="value"
-          />
+          <USelectMenu v-model="variant" :options="optionVariant" />
 
           <template #help>
             <p>
@@ -82,8 +78,6 @@
             :ui="ui"
             :items="items1"
             :orientation="orientation"
-            :color="color"
-            :variant="variant"
             :fullWidth="fullWidth"
           />
         </div>
@@ -97,8 +91,6 @@
             :ui="ui"
             :items="items2"
             :orientation="orientation"
-            :color="color"
-            :variant="variant"
             :fullWidth="fullWidth"
           >
           </UTabs>
@@ -109,6 +101,8 @@
 </template>
 
 <script setup lang="ts">
+import colorVariant from "~/config/ui/tabs/template/colorVariant";
+
 definePageMeta({
   layout: "components",
 });
@@ -129,20 +123,7 @@ const optionColor = [
   "error",
 ];
 const variant = ref("solid");
-const optionVariant = [
-  {
-    label: "solid",
-    value: "solid",
-  },
-  {
-    label: "underline",
-    value: "underline",
-  },
-  {
-    label: "line",
-    value: "line",
-  },
-];
+const optionVariant = ["solid", "underline", "line"];
 const items1 = [
   {
     label: "Tab1",
@@ -175,21 +156,9 @@ const items2 = [
   },
 ];
 
-const ui = /*ui*/ computed(() => {
-  return color.value !== "white" && color.value !== "black"
-    ? {
-        list: {
-          marker: {
-            background: `bg-${color.value}-500`,
-          },
-          tab: {
-            active: { [`text-${color.value}-500`]: variant.value !== "solid" },
-            inactive: `hover:text-${color.value}-500`,
-          },
-        },
-      }
-    : {};
-});
+const ui = computed(() =>
+  colorVariant({ color: color.value, variant: variant.value }),
+);
 </script>
 
 <style scoped></style>

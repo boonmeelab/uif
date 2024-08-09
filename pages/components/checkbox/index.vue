@@ -46,11 +46,15 @@
             <p>
               Custom checkbox size by ui config
               <UBadge color="gray" variant="solid">
-                <code class="whitespace-pre">{{ ui }}</code>
+                <code class="whitespace-pre">{{ size.value }}</code>
               </UBadge>
               <br />
               default:
               <UBadge color="gray" variant="solid">16</UBadge>
+              <!-- Customize the size of the checkbox from the object
+              <UBadge color="gray" variant="solid">ui</UBadge> settings in the
+              components prop
+              <span class="text-tertiary-500">*not required</span> -->
             </p>
           </template>
         </UFormGroup>
@@ -80,7 +84,7 @@
       <section class="mt-6">
         <div class="mt-3 flex gap-10">
           <UCheckbox
-            :ui="ui"
+            :ui="size.value"
             :label="label"
             :help="help"
             :color="color"
@@ -93,6 +97,16 @@
 </template>
 
 <script setup lang="ts">
+import {
+  size16,
+  size24,
+  size32,
+  size36,
+  size44,
+  size56,
+  size72,
+} from "~/config/ui/checkbox/template/size";
+
 definePageMeta({
   layout: "components",
 });
@@ -100,8 +114,37 @@ definePageMeta({
 const disabled = ref(false);
 const label = ref("Label");
 const help = ref("Description help");
-const size = ref("16");
-const optionSize = ["16", "24", "32", "36", "44", "56", "72"];
+const optionSize = [
+  {
+    label: "16",
+    value: size16,
+  },
+  {
+    label: "24",
+    value: size24,
+  },
+  {
+    label: "32",
+    value: size32,
+  },
+  {
+    label: "36",
+    value: size36,
+  },
+  {
+    label: "44",
+    value: size44,
+  },
+  {
+    label: "56",
+    value: size56,
+  },
+  {
+    label: "72",
+    value: size72,
+  },
+];
+const size = ref(optionSize[0]);
 const color = ref("primary");
 const optionColor = [
   "neutral",
@@ -112,60 +155,6 @@ const optionColor = [
   "warning",
   "error",
 ];
-
-const ui = computed(() => {
-  switch (size.value) {
-    case "16":
-      return {
-        base: "size-4 ring-0",
-        rounded: "rounded-4",
-        label: "text-sm",
-        help: "text-xs",
-      };
-    case "24":
-      return {
-        base: "size-6",
-        rounded: "rounded-6",
-        label: "text-base",
-        help: "text-sm",
-      };
-    case "32":
-      return {
-        base: "size-8",
-        rounded: "rounded-6",
-        label: "text-base",
-        help: "text-sm",
-      };
-    case "36":
-      return {
-        base: "size-9",
-        rounded: "rounded-8",
-        label: "text-xl",
-        help: "text-base",
-      };
-    case "44":
-      return {
-        base: "size-11",
-        rounded: "rounded-8",
-        label: "text-2xl",
-        help: "text-base",
-      };
-    case "56":
-      return {
-        base: "size-14",
-        rounded: "rounded-8",
-        label: "text-[34px]",
-        help: "text-2xl",
-      };
-    case "72":
-      return {
-        base: "size-[72px]",
-        rounded: "rounded-8",
-        label: "text-[60px]",
-        help: "text-2xl",
-      };
-  }
-});
 </script>
 
 <style scoped></style>

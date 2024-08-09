@@ -1,7 +1,5 @@
 import type { Config } from "tailwindcss";
 import twUxd from "./tw-config-uxd";
-// import defaultTheme from "tailwindcss/defaultTheme";
-// import plugin from "tailwindcss/plugin";
 
 export default {
   content: [
@@ -11,6 +9,7 @@ export default {
     "./plugins/**/*.{js,ts}",
     "./app.vue",
     "./error.vue",
+    './config/ui/**/*.{js,ts}',
   ],
   safelist: [
     {
