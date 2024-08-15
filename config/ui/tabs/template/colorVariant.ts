@@ -136,7 +136,5 @@ export default function ({ color = 'white', variant = 'solid' }: Props = {}) {
 
   const key = color === 'white' || color === 'black' ? `${variant}.${color}` : `${variant}.custom`
 
-  console.log("🚀 ~ defaultfunction({color ~ key:", key)
   return _get({ solid, line, underline }, key, solid.white)
-  // return _get({ solid, line, underline }, color === 'white' || color === 'black' ? `${variant}.${color}` : `${variant}.customs`, solid)
 }

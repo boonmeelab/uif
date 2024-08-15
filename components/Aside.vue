@@ -45,6 +45,10 @@ const components = _orderBy(
       label: "Form Group",
       to: "/components/form",
     },
+    {
+      label: "Multi Select Item",
+      to: "/components/multi-select-item",
+    },
   ],
   "label",
   "asc",
