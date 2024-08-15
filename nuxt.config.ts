@@ -14,14 +14,33 @@ export default defineNuxtConfig({
     dirs: [
       "composables",
       "composables/*",
-      "composables/*.{d.ts,ts,js,mjs,mts}",
+      "composables/*.{d.ts,ts,js,mjs,mts}"
     ],
+  },
+
+  components: {
+    dirs: [
+      { path: '~/components/Ui', pathPrefix: false },
+      '~/components',
+    ]
   },
 
   modules: ["@nuxt/ui", "@nuxtjs/google-fonts", "nuxt-lodash", "@vueuse/nuxt"],
 
   colorMode: {
     preference: "light",
+  },
+
+  ui: {
+    safelistColors: [
+      'neutral',
+      'primary',
+      'secondary',
+      'tertiary',
+      'success',
+      'warning',
+      'error',
+    ]
   },
 
   googleFonts: {
