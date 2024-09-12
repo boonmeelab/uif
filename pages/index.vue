@@ -1,6 +1,8 @@
 <template>
   <div class="py-12 screen-padding">
     <div class="container flex flex-col gap-14">
+      <StylesThemes />
+      <hr />
       <StylesColorPalettes />
       <hr />
       <StylesTypography />
