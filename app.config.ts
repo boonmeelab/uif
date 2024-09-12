@@ -1,10 +1,11 @@
-import uiConfig from "./config/ui"
+import uiConfig from "./config/ui";
 
-const config = uiConfig()
+const customConfig = {}
+const config = uiConfig(customConfig);
 
 export default defineAppConfig({
   ui: {
     primary: "uiPrimary",
     ...config,
-  }
+  },
 });

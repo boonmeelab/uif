@@ -17,59 +17,7 @@
     </Header>
 
     <div class="pb-20 pt-10">
-      <div class="mb-3 flex flex-col gap-3">
-        <h6 class="font-semibold">Config Settings</h6>
-      </div>
-
-      <section class="grid grid-cols-5 gap-4">
-        <UFormGroup label="Label">
-          <UInput v-model="label" />
-        </UFormGroup>
-
-        <UFormGroup label="Hint">
-          <UInput v-model="hint" />
-        </UFormGroup>
-
-        <UFormGroup label="Help">
-          <UInput v-model="help" />
-        </UFormGroup>
-
-        <UFormGroup label="Description">
-          <UInput v-model="description" />
-        </UFormGroup>
-
-        <div />
-
-        <UFormGroup label="Size">
-          <USelectMenu v-model="size" :options="optionSize" />
-
-          <template #help>
-            <p>
-              Change the size of the label and the form element.
-              <UBadge color="gray" variant="solid">px</UBadge> <br />
-              default: <UBadge color="gray" variant="solid">14</UBadge>
-            </p>
-          </template>
-        </UFormGroup>
-
-        <UFormGroup>
-          <template #label>
-            <UCheckbox v-model="fullWidth" label="Full Width" />
-          </template>
-          <template #help>
-            Custom input width by ui config
-            <UBadge color="gray" variant="solid">
-              <code class="whitespace-pre">{ wrapper: "w-full" }</code>
-            </UBadge>
-          </template>
-        </UFormGroup>
-      </section>
-
-      <div class="mt-6 flex flex-col gap-2">
-        <h6 class="font-semibold">Preview</h6>
-      </div>
-
-      <section class="mt-6">
+      <section>
         <div class="font-semibold text-b-1">Default</div>
 
         <div class="mt-3 flex gap-10">
@@ -102,6 +50,73 @@
             </template>
           </UFormGroup>
         </div>
+      </section>
+
+      <section class="mt-16 flex flex-col gap-3">
+        <h6 class="font-semibold">Config Settings</h6>
+
+        <div class="grid grid-cols-5 gap-4">
+          <UFormGroup label="Label">
+            <UInput v-model="label" />
+          </UFormGroup>
+
+          <UFormGroup label="Hint">
+            <UInput v-model="hint" />
+          </UFormGroup>
+
+          <UFormGroup label="Help">
+            <UInput v-model="help" />
+          </UFormGroup>
+
+          <UFormGroup label="Description">
+            <UInput v-model="description" />
+          </UFormGroup>
+
+          <div />
+
+          <UFormGroup label="Size">
+            <USelectMenu v-model="size" :options="optionSize" />
+
+            <template #help>
+              <p>
+                Change the size of the label and the form element.<br />
+                default: <UBadge color="gray" variant="solid">14</UBadge>
+              </p>
+            </template>
+          </UFormGroup>
+
+          <UFormGroup>
+            <template #label>
+              <UCheckbox v-model="fullWidth" label="Full Width" />
+            </template>
+            <template #help>
+              Custom input width by ui config
+              <UBadge color="gray" variant="solid">
+                <code class="whitespace-pre">{wrapper: 'w-full'}</code>
+              </UBadge>
+            </template>
+          </UFormGroup>
+        </div>
+      </section>
+
+      <section class="mt-10 flex flex-col gap-3">
+        <h5 class="font-semibold">Usage</h5>
+
+        <div>
+          <div class="font-semibold text-h6">Default</div>
+          <CodeBlock :content="codeDefault" />
+        </div>
+
+        <div>
+          <div class="font-semibold text-h6">Custom Help</div>
+          <CodeBlock :content="codeCustomHelp" />
+        </div>
+      </section>
+
+      <section class="mt-10 flex flex-col gap-3">
+        <h5 class="font-semibold">Config</h5>
+
+        <CodeBlock :content="config" />
       </section>
 
       <!--<hr class="mt-6 border-neutral-50" />
@@ -192,7 +207,8 @@
 </template>
 
 <script setup lang="ts">
-import type { FormError, FormSubmitEvent } from "#ui/types";
+import type { FormGroupSize } from "#ui/types";
+import { formGroup } from "~/config/ui/formGroup";
 
 definePageMeta({
   layout: "components",
@@ -205,7 +221,7 @@ const description = ref("We'll only use this for spam.");
 const fullWidth = ref(false);
 const inputValue = ref("");
 const inputValue2 = ref("");
-const size = ref("14");
+const size = ref<FormGroupSize>("14");
 const optionSize = ["12", "14", "16"];
 
 const ui = computed(() => {
@@ -214,6 +230,42 @@ const ui = computed(() => {
         wrapper: "w-full",
       }
     : {};
+});
+
+const config = `\`\`\`js
+// config/ui/formGroup/index.ts
+
+export const formGroup = ${JSON.stringify(formGroup, null, 2)}`;
+
+const codeDefault = computed(() => {
+  let code = `
+<UFormGroup
+  size="${size.value}"
+  label="${label.value}"
+  hint="${hint.value}"
+  description="${description.value}"
+  help="${help.value}"`;
+
+  if (fullWidth.value) code += `\n  :ui="{wrapper: 'w-full'}"`;
+  return `\`\`\`html ${code}>
+  ....
+</UFormGroup>`;
+});
+
+const codeCustomHelp = computed(() => {
+  let code = `
+<UFormGroup>
+  ....
+
+  <template #help>
+    <div class="flex justify-between">
+      <span>Supporting text</span>
+      <span>10/500</span>
+    </div>
+  </template>
+</UFormGroup>`;
+
+  return `\`\`\`html ${code}`;
 });
 </script>
 

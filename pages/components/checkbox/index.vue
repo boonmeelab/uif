@@ -20,7 +20,19 @@
     </Header>
 
     <div class="pb-20 pt-10">
-      <div class="mb-3 flex flex-col gap-3">
+      <section>
+        <div class="mt-3 flex gap-10">
+          <UCheckbox
+            :ui="size.value"
+            :label="label"
+            :help="help"
+            :color="color"
+            :disabled="disabled"
+          />
+        </div>
+      </section>
+
+      <div class="mb-3 mt-16 flex flex-col gap-3">
         <h6 class="font-semibold">Config Settings</h6>
       </div>
 
@@ -39,15 +51,17 @@
           <UInput v-model="help" />
         </UFormGroup>
 
-        <UFormGroup label="Size">
+        <UFormGroup>
+          <template #label>
+            Size
+            <UBadge variant="soft">template</UBadge></template
+          >
           <USelectMenu v-model="size" :options="optionSize" />
 
           <template #help>
             <p>
-              Custom checkbox size by ui config
-              <UBadge color="gray" variant="solid">
-                <code class="whitespace-pre">{{ size.value }}</code>
-              </UBadge>
+              Custom checkbox size by
+              <UBadge color="gray" variant="solid">template/size</UBadge>
               <br />
               default:
               <UBadge color="gray" variant="solid">16</UBadge>
@@ -77,19 +91,37 @@
         </UFormGroup>
       </section>
 
-      <div class="mt-6 flex flex-col gap-2">
-        <h6 class="font-semibold">Preview</h6>
-      </div>
+      <section class="mt-10 flex flex-col gap-3">
+        <h5 class="font-semibold">Usage</h5>
 
-      <section class="mt-6">
-        <div class="mt-3 flex gap-10">
-          <UCheckbox
-            :ui="size.value"
-            :label="label"
-            :help="help"
-            :color="color"
-            :disabled="disabled"
-          />
+        <CodeBlock :content="code" />
+
+        <div>
+          <div class="font-semibold text-neutral-800 text-b-1">
+            Custom ui props by template?
+          </div>
+          <p class="text-neutral-700 text-b-1">
+            You can customize the whole template by using the ui prop.<br />
+            Example: Set the size by importing the size from the template
+            <UBadge color="gray" variant="solid"
+              >import { size16 } from
+              "~/config/ui/...component.../template/size"</UBadge
+            >
+          </p>
+        </div>
+
+        <AlertUseTemplate />
+      </section>
+
+      <section class="mt-10 flex flex-col gap-3">
+        <h5 class="font-semibold">Config</h5>
+
+        <CodeBlock :content="configDefault" />
+
+        <div class="flex flex-col gap-3 pb-10 pt-6">
+          <div class="font-semibold text-h6">Template</div>
+
+          <CodeBlock :content="configTemplate" />
         </div>
       </section>
     </div>
@@ -106,6 +138,7 @@ import {
   size56,
   size72,
 } from "~/config/ui/checkbox/template/size";
+import { checkbox as configCheckbox } from "~/config/ui/checkbox";
 
 definePageMeta({
   layout: "components",
@@ -155,6 +188,36 @@ const optionColor = [
   "warning",
   "error",
 ];
+
+const configDefault = `\`\`\`js
+// config/ui/checkbox/index.ts
+
+export const checkbox = ${JSON.stringify(configCheckbox, null, 2)}`;
+
+const configTemplate = `\`\`\`js
+// config/ui/checkbox/template/size.ts
+
+export const size16 = ${JSON.stringify(size16, null, 2)}
+export const size24 = ${JSON.stringify(size24, null, 2)}
+export const size32 = ${JSON.stringify(size32, null, 2)}
+export const size36 = ${JSON.stringify(size36, null, 2)}
+export const size44 = ${JSON.stringify(size44, null, 2)}
+export const size56 = ${JSON.stringify(size56, null, 2)}
+export const size72 = ${JSON.stringify(size72, null, 2)}`;
+
+const code = computed(() => {
+  let code = `
+<UCheckbox
+  label="${label.value}"
+  color="${color.value}"`;
+
+  if (help.value) code += `\n  help="${help.value}"`;
+  if (size.value.label !== "16") code += `\n  :ui="size${size.value.label}"`;
+  if (disabled.value) code += `\n  disabled`;
+
+  return `\`\`\`html ${code}
+/>`;
+});
 </script>
 
 <style scoped></style>

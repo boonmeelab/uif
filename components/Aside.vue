@@ -54,7 +54,15 @@ const components = _orderBy(
   "asc",
 );
 
-const links = [components];
+const links = [
+  [
+    {
+      label: "Introduction",
+      to: "/components",
+    },
+  ],
+  components,
+];
 </script>
 
 <style scoped></style>

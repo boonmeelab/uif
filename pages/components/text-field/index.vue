@@ -20,112 +20,7 @@
     </Header>
 
     <div class="pb-20 pt-10">
-      <div class="mb-3 flex flex-col gap-3">
-        <h6 class="font-semibold">Config Settings</h6>
-      </div>
-
-      <section class="grid grid-cols-5 gap-4">
-        <UFormGroup label="Placeholder">
-          <UInput v-model="placeholder" />
-        </UFormGroup>
-
-        <UFormGroup label="Size">
-          <USelectMenu v-model="size" :options="optionSize" />
-
-          <template #help>
-            <p>
-              Change the size of the Input. The unit is
-              <UBadge color="gray" variant="solid">px</UBadge> <br />
-              default: <UBadge color="gray" variant="solid">32px</UBadge>
-            </p>
-          </template>
-        </UFormGroup>
-
-        <UFormGroup label="Color">
-          <USelectMenu v-model="color" :options="optionColor" />
-
-          <template #help>
-            <p>
-              Change the visual style of the Input. <br />
-              default: <UBadge color="gray" variant="solid">white</UBadge>
-            </p>
-          </template>
-        </UFormGroup>
-
-        <UFormGroup label="Variant">
-          <USelectMenu
-            v-model="variant"
-            :options="optionVariant"
-            value-attribute="value"
-          />
-
-          <template #help>
-            <p>
-              Change the visual style of the Input. <br />
-              default: <UBadge color="gray" variant="solid">outline</UBadge>
-            </p>
-          </template>
-        </UFormGroup>
-
-        <div />
-
-        <UFormGroup>
-          <template #label>
-            <UCheckbox v-model="fullWidth" label="Full Width" />
-          </template>
-          <template #help>
-            Custom input width by ui config
-            <UBadge color="gray" variant="solid">
-              <code class="whitespace-pre">{ wrapper: "w-full" }</code>
-            </UBadge>
-          </template>
-        </UFormGroup>
-
-        <UFormGroup>
-          <template #label>
-            <UCheckbox v-model="loading" label="loading" />
-          </template>
-          <template #help>
-            Use the <UBadge color="gray" variant="solid">loading</UBadge> prop
-            to show a loading icon and disable the Input. <br />
-            <Icon name="i-svg-spinners-90-ring-with-bg"></Icon> install
-            <UBadge color="gray" variant="solid"
-              >@iconify-json/svg-spinners</UBadge
-            >
-          </template>
-        </UFormGroup>
-
-        <UFormGroup>
-          <template #label>
-            <UCheckbox v-model="trailing" name="Trailing" label="trailing" />
-          </template>
-
-          <template #help>
-            <p>
-              set the icon position. default:
-              <UBadge color="gray" variant="solid">leading</UBadge>
-            </p>
-          </template>
-        </UFormGroup>
-
-        <UFormGroup help="remove the padding of the Input.">
-          <template #label>
-            <UCheckbox v-model="padded" name="Padded" label="padded" />
-          </template>
-        </UFormGroup>
-
-        <UFormGroup>
-          <template #label>
-            <UCheckbox v-model="disabled" name="Disabled" label="disabled" />
-          </template>
-        </UFormGroup>
-      </section>
-
-      <div class="mt-6 flex flex-col gap-2">
-        <h6 class="font-semibold">Preview</h6>
-      </div>
-
-      <section class="mt-6">
+      <section>
         <div class="font-semibold text-b-1">Default</div>
 
         <div class="mt-3 flex gap-10">
@@ -277,11 +172,127 @@
           </UInput>
         </div>
       </section>
+
+      <section class="mt-16 flex flex-col gap-3">
+        <h6 class="font-semibold">Config Settings</h6>
+
+        <div class="grid grid-cols-5 gap-4">
+          <UFormGroup label="Placeholder">
+            <UInput v-model="placeholder" />
+          </UFormGroup>
+
+          <UFormGroup label="Size">
+            <USelectMenu v-model="size" :options="optionSize" />
+
+            <template #help>
+              <p>
+                Change the size of the Input. The unit is
+                <UBadge color="gray" variant="solid">px</UBadge> <br />
+                default: <UBadge color="gray" variant="solid">32px</UBadge>
+              </p>
+            </template>
+          </UFormGroup>
+
+          <UFormGroup label="Color">
+            <USelectMenu v-model="color" :options="optionColor" />
+
+            <template #help>
+              <p>
+                Change the visual style of the Input. <br />
+                default: <UBadge color="gray" variant="solid">white</UBadge>
+              </p>
+            </template>
+          </UFormGroup>
+
+          <UFormGroup label="Variant">
+            <USelectMenu
+              v-model="variant"
+              :options="optionVariant"
+              value-attribute="value"
+            />
+
+            <template #help>
+              <p>
+                Change the visual style of the Input. <br />
+                default: <UBadge color="gray" variant="solid">outline</UBadge>
+              </p>
+            </template>
+          </UFormGroup>
+
+          <div />
+
+          <UFormGroup>
+            <template #label>
+              <UCheckbox v-model="fullWidth" label="Full Width" />
+            </template>
+            <template #help>
+              Custom input width by ui config
+              <UBadge color="gray" variant="solid">
+                <code class="whitespace-pre">{ wrapper: "w-full" }</code>
+              </UBadge>
+            </template>
+          </UFormGroup>
+
+          <UFormGroup>
+            <template #label>
+              <UCheckbox v-model="loading" label="loading" />
+            </template>
+            <template #help>
+              Use the <UBadge color="gray" variant="solid">loading</UBadge> prop
+              to show a loading icon and disable the Input. <br />
+              <Icon name="i-svg-spinners-90-ring-with-bg"></Icon> install
+              <UBadge color="gray" variant="solid"
+                >@iconify-json/svg-spinners</UBadge
+              >
+            </template>
+          </UFormGroup>
+
+          <UFormGroup>
+            <template #label>
+              <UCheckbox v-model="trailing" name="Trailing" label="trailing" />
+            </template>
+
+            <template #help>
+              <p>
+                set the icon position. default:
+                <UBadge color="gray" variant="solid">leading</UBadge>
+              </p>
+            </template>
+          </UFormGroup>
+
+          <UFormGroup help="remove the padding of the Input.">
+            <template #label>
+              <UCheckbox v-model="padded" name="Padded" label="padded" />
+            </template>
+          </UFormGroup>
+
+          <UFormGroup>
+            <template #label>
+              <UCheckbox v-model="disabled" name="Disabled" label="disabled" />
+            </template>
+          </UFormGroup>
+        </div>
+      </section>
+
+      <section class="mt-10 flex flex-col gap-3">
+        <h5 class="font-semibold">Usage</h5>
+
+        <CodeBlock :content="code" />
+      </section>
+
+      <section class="mt-10 flex flex-col gap-3">
+        <h5 class="font-semibold">Config</h5>
+
+        <CodeBlock :content="configDefault" />
+      </section>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { InputSize, InputColor, InputVariant } from "#ui/types";
+import { input as configInput } from "~/config/ui/input";
+
 definePageMeta({
   layout: "components",
 });
@@ -295,9 +306,9 @@ const loading = ref(false);
 const disabled = ref(false);
 const padded = ref(true);
 const fullWidth = ref(false);
-const size = ref("32");
+const size = ref<InputSize>("32");
 const optionSize = ["24", "28", "32", "36", "40", "44"];
-const color = ref("white");
+const color = ref<InputColor>("white");
 const optionColor = [
   "white",
   "gray",
@@ -309,7 +320,7 @@ const optionColor = [
   "warning",
   "error",
 ];
-const variant = ref("outline");
+const variant = ref<InputVariant>("outline");
 const optionVariant = [
   {
     label: "outline (uxd, nuxtUi)",
@@ -335,6 +346,41 @@ const ui = computed(() => {
         wrapper: "w-full",
       }
     : {};
+});
+
+const configDefault = `\`\`\`js
+// config/ui/input/index.ts
+
+export const input = ${JSON.stringify(configInput, null, 2)}`;
+
+const code = computed(() => {
+  let code = `
+<UInput
+  v-model="input"
+  size="${size.value}"
+  color="${color.value}"
+  variant="${variant.value}"
+  placeholder="${placeholder}"
+  icon="i-heroicons-magnifying-glass-20-solid"
+  :ui="{ ...ui, icon: { trailing: { pointer: '' } } }"`;
+
+  if (!padded.value) code += `\n  :padded="false"`;
+  if (loading.value) code += `\n  loading`;
+  if (trailing.value) code += `\n  trailing`;
+  if (disabled.value) code += `\n  disabled`;
+
+  return `\`\`\`html ${code}>
+  <template #trailing>
+    <UButton
+      v-show="inputValue3 !== ''"
+      color="gray"
+      variant="icon"
+      icon="i-heroicons-x-mark-20-solid"
+      :padded="false"
+      @click="input = ''"
+    />
+  </template>
+</UInput>`;
 });
 </script>
 

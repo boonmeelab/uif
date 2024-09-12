@@ -9,7 +9,7 @@ export default {
     "./plugins/**/*.{js,ts}",
     "./app.vue",
     "./error.vue",
-    './config/ui/**/*.{js,ts}',
+    "./config/ui/**/*.{js,ts}",
   ],
   safelist: [
     {

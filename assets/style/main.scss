@@ -20,3 +20,12 @@
     max-width: 1440px;
   }
 }
+
+.v-md-editor {
+  .vuepress-markdown-body {
+    padding: 0 !important;
+  }
+  .v-md-prism-js {
+    margin: 0 !important;
+  }
+}
