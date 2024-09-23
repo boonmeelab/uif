@@ -1,15 +1,20 @@
 <template>
   <div>
-    <Header title="Badge">
-      Display a short text to represent a status or a category. Based on UI
-      Framework
-      <a
-        href="https://ui.nuxt.com/components/badge"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <UBadge variant="subtle">NuxtUI/Badge</UBadge>
-      </a>
+    <Header
+      title="Badge"
+      :attributes="[
+        {
+          name: 'Component type',
+          value: 'NuxtUI/Badge',
+          link: 'https://ui.nuxt.com/components/badge',
+        },
+        {
+          name: 'Design Systems',
+          value: '',
+        },
+      ]"
+    >
+      Display a short text to represent a status or a category.
     </Header>
 
     <div class="pb-20 pt-10">

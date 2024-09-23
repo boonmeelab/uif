@@ -1,22 +1,20 @@
 <template>
   <div>
-    <Header title="Toggle Switch">
-      Based on UI Framework
-      <a
-        href="https://ui.nuxt.com/components/toggle"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <UBadge variant="subtle">NuxtUI/Toggle</UBadge></a
-      >
-      , design systems by UXD
-      <a
-        href="https://www.figma.com/design/jQpNsc72oiEP08XREsYobw/BML-UXD?node-id=2314-22213&t=zQzEyTtomdoknkeV-4"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <UBadge variant="subtle">Figma</UBadge></a
-      >
+    <Header
+      title="Toggle Switch"
+      :attributes="[
+        {
+          name: 'Component type',
+          value: 'NuxtUI/Toggle',
+          link: 'https://ui.nuxt.com/components/toggle',
+        },
+        {
+          name: 'Design Systems',
+          value: 'UXD',
+          link: 'https://www.figma.com/design/jQpNsc72oiEP08XREsYobw/BML-UXD?node-id=2314-22213&t=zQzEyTtomdoknkeV-4',
+        },
+      ]"
+    >
     </Header>
 
     <div class="pb-20 pt-10">

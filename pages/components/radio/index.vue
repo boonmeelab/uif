@@ -1,22 +1,21 @@
 <template>
   <div>
-    <Header title="Radio">
-      Based on UI Framework
-      <a
-        href="https://ui.nuxt.com/components/checkbox"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <UBadge variant="subtle">NuxtUI/RadioGroup</UBadge></a
-      >
-      , design systems by UXD
-      <a
-        href="https://www.figma.com/design/jQpNsc72oiEP08XREsYobw/BML-UXD?node-id=2434-4043&t=Hqa4spYA5VItecTa-4"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <UBadge variant="subtle">Figma</UBadge></a
-      >
+    <Header
+      title="Radio"
+      :attributes="[
+        {
+          name: 'Component type',
+          value: 'NuxtUI/RadioGroup',
+          link: 'https://ui.nuxt.com/components/radio-group',
+        },
+        {
+          name: 'Design Systems',
+          value: 'UXD',
+          link: 'https://www.figma.com/design/jQpNsc72oiEP08XREsYobw/BML-UXD?node-id=2434-4043&t=Hqa4spYA5VItecTa-4',
+        },
+      ]"
+    >
+      Display a set of radio buttons.
     </Header>
 
     <div class="pb-20 pt-10">

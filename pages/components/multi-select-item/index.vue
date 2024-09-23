@@ -1,6 +1,18 @@
 <template>
   <div>
-    <Header title="Multi Select Item">
+    <Header
+      title="Multi Select Item"
+      :attributes="[
+        {
+          name: 'Component type',
+          value: 'Custom',
+        },
+        {
+          name: 'Design Systems',
+          value: '',
+        },
+      ]"
+    >
       Multi Select Item is a component that groups
       <NuxtLink to="/components/button">
         <UBadge variant="subtle">button</UBadge>
@@ -293,15 +305,14 @@ const size = ref("32");
 const optionSize = ["24", "32", "36", "44", "56", "72"];
 
 const codeUsage = computed(() => {
-  let code = `
-<MultiSelectItem
-  v-model="select"
-  :options="options"
-  size="${size.value}"
-  color="${colorStyle.value}"
-  variant="${variantStyle.value}"
-  colorActive="${colorActive.value}"
-  variantActive="${variantActive.value}"`;
+  let code = `<MultiSelectItem
+    v-model="select"
+    :options="options"
+    size="${size.value}"
+    color="${colorStyle.value}"
+    variant="${variantStyle.value}"
+    colorActive="${colorActive.value}"
+    variantActive="${variantActive.value}"`;
 
   if (limitSelect.value) code += `\n  :limitSelect="${limitSelect.value}"`;
   if (classActive.value) code += `\n  classActive="${classActive.value}"`;
@@ -309,10 +320,47 @@ const codeUsage = computed(() => {
   if (rounded.value) code += `\n  rounded`;
   if (disabled.value) code += `\n  disabled`;
 
-  return `\`\`\`html ${code}/>`;
+  return `\`\`\`html 
+<\script setup lang="ts">
+const select = ref([]);
+
+const options = [
+  {
+    label: "bug",
+    value: "bug",
+  },
+  {
+    label: "documentation",
+    value: "documentation",
+  },
+  {
+    label: "duplicate",
+    value: "duplicate",
+  },
+  {
+    label: "enhancement",
+    value: "enhancement",
+  },
+  {
+    label: "good first issue",
+    value: "good first issue",
+  },
+  {
+    label: "help wanted",
+    value: "help wanted",
+    disabled: true,
+  },
+];
+</\script>
+
+<template>
+  ${code}/>
+</template>`;
 });
 
 const codeCom = `\`\`\`html
+// components/MultiSelectItem.vue
+
 <template>
   <div :class="useMc('flex flex-wrap gap-2', props.class)">
     <UButton

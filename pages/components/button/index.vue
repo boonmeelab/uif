@@ -1,21 +1,20 @@
 <template>
-  <Header title="Button">
-    Based on UI Framework
-    <a
-      href="https://ui.nuxt.com/components/button"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <UBadge variant="subtle">NuxtUI/Button</UBadge></a
-    >
-    , design systems by UXD
-    <a
-      href="https://www.figma.com/design/jQpNsc72oiEP08XREsYobw/BML-UXD?node-id=2310-19772&t=73wIgnZyW4Y0CbpJ-4"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <UBadge variant="subtle">Figma</UBadge></a
-    >
+  <Header
+    title="Button"
+    :attributes="[
+      {
+        name: 'Component type',
+        value: 'NuxtUI/Button',
+        link: 'https://ui.nuxt.com/components/button',
+      },
+      {
+        name: 'Design Systems',
+        value: 'UXD',
+        link: 'https://www.figma.com/design/jQpNsc72oiEP08XREsYobw/BML-UXD?node-id=2310-19772&t=73wIgnZyW4Y0CbpJ-4',
+      },
+    ]"
+  >
+    Display a short text to represent a status or a category.
   </Header>
 
   <div class="pb-20 pt-10">

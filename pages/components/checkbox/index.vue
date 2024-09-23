@@ -1,22 +1,20 @@
 <template>
   <div>
-    <Header title="Checkbox">
-      Based on UI Framework
-      <a
-        href="https://ui.nuxt.com/components/checkbox"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <UBadge variant="subtle">NuxtUI/Checkbox</UBadge></a
-      >
-      , design systems by UXD
-      <a
-        href="https://www.figma.com/design/jQpNsc72oiEP08XREsYobw/BML-UXD?node-id=2330-1943&t=zQzEyTtomdoknkeV-4"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <UBadge variant="subtle">Figma</UBadge></a
-      >
+    <Header
+      title="Checkbox"
+      :attributes="[
+        {
+          name: 'Component type',
+          value: 'NuxtUI/Checkbox',
+          link: 'https://ui.nuxt.com/components/checkbox',
+        },
+        {
+          name: 'Design Systems',
+          value: 'UXD',
+          link: 'https://www.figma.com/design/jQpNsc72oiEP08XREsYobw/BML-UXD?node-id=2330-1943&t=zQzEyTtomdoknkeV-4',
+        },
+      ]"
+    >
     </Header>
 
     <div class="pb-20 pt-10">

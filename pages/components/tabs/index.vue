@@ -1,14 +1,21 @@
 <template>
   <div>
-    <Header title="Tabs">
-      Based on UI Framework
-      <a
-        href="https://ui.nuxt.com/components/tabs"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <UBadge variant="subtle">NuxtUI/Tabs</UBadge></a
-      >
+    <Header
+      title="Tabs"
+      :attributes="[
+        {
+          name: 'Component type',
+          value: 'NuxtUI/Tabs',
+          link: 'https://ui.nuxt.com/components/tabs',
+        },
+        {
+          name: 'Design Systems',
+          value: 'UXD',
+          link: 'https://www.figma.com/design/jQpNsc72oiEP08XREsYobw/BML-UXD?node-id=2434-4043&t=Hqa4spYA5VItecTa-4',
+        },
+      ]"
+    >
+      A set of tab panels that are displayed one at a time.
     </Header>
 
     <div class="pb-20 pt-10">

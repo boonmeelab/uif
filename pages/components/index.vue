@@ -27,8 +27,24 @@
       <h4 class="mt-6 font-semibold">Require</h4>
       <ul class="mt-3 list-disc pl-5 text-neutral-800">
         <!-- Installation of the @nuxt/ui module is necessary<br /> -->
-        <li>@nuxt/ui (v.2.18.4)</li>
-        <li>nuxt (v.3.12.4)</li>
+        <li>
+          <ULink
+            to="https://ui.nuxt.com/getting-started"
+            target="_blank"
+            inactive-class="hover:text-primary"
+          >
+            @nuxt/ui (v.2.18.4)
+          </ULink>
+        </li>
+        <li>
+          <ULink
+            to="https://nuxt.com/docs/getting-started/introduction"
+            inactive-class="hover:text-primary"
+            target="_blank"
+          >
+            nuxt (v.3.12.4)
+          </ULink>
+        </li>
       </ul>
 
       <h4 class="mt-6 font-semibold">Setup</h4>

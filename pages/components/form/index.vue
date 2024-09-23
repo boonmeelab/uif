@@ -1,19 +1,25 @@
 <template>
   <div>
-    <Header title="FormGroup">
+    <Header
+      title="FormGroup"
+      :attributes="[
+        {
+          name: 'Component type',
+          value: 'NuxtUI/FormGroup',
+          link: 'https://ui.nuxt.com/components/form-group',
+        },
+        {
+          name: 'Design Systems',
+          value: '',
+        },
+      ]"
+    >
       Display a label and additional informations around a form element. Use the
       FormGroup component around an Input, Textarea, Select or a SelectMenu with
       a label. The
       <UBadge color="gray" variant="solid"><{{ "label" }}></UBadge> will
       automatically be associated with the form element so it gets focused on
-      click. <br />Based on UI Framework
-      <a
-        href="https://ui.nuxt.com/components/form-group"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <UBadge variant="subtle">NuxtUI/FormGroup</UBadge></a
-      >
+      click.
     </Header>
 
     <div class="pb-20 pt-10">

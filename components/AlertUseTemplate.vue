@@ -6,7 +6,8 @@
   >
     <template #description>
       <p class="mb-4">
-        you can do so by using a merge object in javascript or lodash.
+        you can do so by using a <UBadge label="merge" color="white" /> object
+        in javascript or lodash.
       </p>
 
       <CodeBlock
