@@ -1,7 +1,7 @@
 <template>
-  <div
+  <nav
     ref="nav"
-    class="sticky top-0 z-[100] border-b border-neutral-100 bg-white/80 backdrop-blur-lg screen-padding"
+    class="border-b border-neutral-100 bg-white/80 backdrop-blur-lg screen-padding"
   >
     <div class="container flex h-14 items-center gap-8">
       <NuxtLink to="/">
@@ -23,7 +23,7 @@
         >
       </div>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script setup lang="ts">
