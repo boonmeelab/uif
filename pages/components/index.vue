@@ -42,7 +42,7 @@
             inactive-class="hover:text-primary"
             target="_blank"
           >
-            nuxt (v.3.12.4)
+            nuxt (v.3.13.2)
           </ULink>
         </li>
       </ul>
