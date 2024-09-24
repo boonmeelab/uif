@@ -3,11 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import VueMarkdownEditor from "@kangc/v-md-editor";
-import createCopyCodePlugin from "@kangc/v-md-editor/lib/plugins/copy-code/index";
 import "@kangc/v-md-editor/lib/plugins/copy-code/copy-code.css";
-
-VueMarkdownEditor.use(createCopyCodePlugin());
 
 interface Props {
   content: string;

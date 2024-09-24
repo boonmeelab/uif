@@ -1,5 +1,5 @@
 <template>
-  <div class="border-t border-neutral-50 screen-padding">
+  <footer class="border-t border-neutral-50 screen-padding">
     <div class="container flex justify-between gap-1 pb-3 pt-4">
       <div class="text-overline">
         Made by
@@ -14,7 +14,7 @@
         with <span class="text-primary-400">UXD Template</span>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script setup></script>

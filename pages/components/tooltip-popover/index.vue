@@ -1,23 +1,21 @@
 <template>
   <div>
-    <Header title="Tooltip/Popover">
-      Display a non-modal dialog that floats around a trigger element. Based on
-      UI Framework
-      <a
-        href="https://ui.nuxt.com/components/popover"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <UBadge variant="subtle">NuxtUI/Popover</UBadge></a
-      >
-      , design systems by UXD
-      <a
-        href="https://www.figma.com/design/jQpNsc72oiEP08XREsYobw/BML-UXD?node-id=1284-26272&t=PZTqOxG9xRT4tvaQ-4"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <UBadge variant="subtle">Figma</UBadge></a
-      >
+    <Header
+      title="Tooltip/Popover"
+      :attributes="[
+        {
+          name: 'Component type',
+          value: 'NuxtUI/Popover',
+          link: 'https://ui.nuxt.com/components/popover',
+        },
+        {
+          name: 'Design Systems',
+          value: 'UXD',
+          link: 'https://www.figma.com/design/jQpNsc72oiEP08XREsYobw/BML-UXD?node-id=1284-26272&t=PZTqOxG9xRT4tvaQ-4',
+        },
+      ]"
+    >
+      Display a non-modal dialog that floats around a trigger element.
     </Header>
 
     <div class="pb-20 pt-10">
@@ -187,6 +185,10 @@ import { popover as configPopover } from "~/config/ui/popover";
 
 definePageMeta({
   layout: "components",
+});
+
+defineRouteRules({
+  prerender: true,
 });
 
 const mode = ref("hover");

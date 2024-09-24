@@ -2,14 +2,16 @@
 
 <template>
   <div class="flex min-h-screen flex-col">
-    <NavBar />
+    <header class="sticky top-0 z-[100]">
+      <NavBar />
+    </header>
 
     <div class="flex flex-1">
       <Aside />
 
-      <div class="flex-1 px-6">
+      <main class="flex-1 px-6">
         <slot />
-      </div>
+      </main>
     </div>
 
     <Footer />

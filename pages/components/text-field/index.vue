@@ -1,22 +1,20 @@
 <template>
   <div>
-    <Header title="Text Field">
-      Based on UI Framework
-      <a
-        href="https://ui.nuxt.com/components/input"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <UBadge variant="subtle">NuxtUI/Input</UBadge></a
-      >
-      , design systems by UXD
-      <a
-        href="https://www.figma.com/design/jQpNsc72oiEP08XREsYobw/BML-UXD?node-id=2500-33895&t=PZTqOxG9xRT4tvaQ-4"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <UBadge variant="subtle">Figma</UBadge></a
-      >
+    <Header
+      title="Text Field"
+      :attributes="[
+        {
+          name: 'Component type',
+          value: 'NuxtUI/Input',
+          link: 'https://ui.nuxt.com/components/input',
+        },
+        {
+          name: 'Design Systems',
+          value: 'UXD',
+          link: 'https://www.figma.com/design/jQpNsc72oiEP08XREsYobw/BML-UXD?node-id=2500-33895&t=PZTqOxG9xRT4tvaQ-4',
+        },
+      ]"
+    >
     </Header>
 
     <div class="pb-20 pt-10">
@@ -295,6 +293,10 @@ import { input as configInput } from "~/config/ui/input";
 
 definePageMeta({
   layout: "components",
+});
+
+defineRouteRules({
+  prerender: true,
 });
 
 const inputValue = ref("");
