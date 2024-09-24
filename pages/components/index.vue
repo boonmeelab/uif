@@ -82,6 +82,10 @@ definePageMeta({
   layout: "components",
 });
 
+defineRouteRules({
+  prerender: true,
+});
+
 const tailwind = `
 \`\`\`js
 // tailwind.config.ts

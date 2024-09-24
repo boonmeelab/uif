@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  experimental: {
+    inlineRouteRules: true,
+  },
+
   app: {
     head: {
       title: "BML UI Framework",
@@ -14,15 +18,12 @@ export default defineNuxtConfig({
     dirs: [
       "composables",
       "composables/*",
-      "composables/*.{d.ts,ts,js,mjs,mts}"
+      "composables/*.{d.ts,ts,js,mjs,mts}",
     ],
   },
 
   components: {
-    dirs: [
-      { path: '~/components/Ui', pathPrefix: false },
-      '~/components',
-    ]
+    dirs: [{ path: "~/components/Ui", pathPrefix: false }, "~/components"],
   },
 
   modules: ["@nuxt/ui", "@nuxtjs/google-fonts", "nuxt-lodash", "@vueuse/nuxt"],
@@ -33,14 +34,14 @@ export default defineNuxtConfig({
 
   ui: {
     safelistColors: [
-      'neutral',
-      'primary',
-      'secondary',
-      'tertiary',
-      'success',
-      'warning',
-      'error',
-    ]
+      "neutral",
+      "primary",
+      "secondary",
+      "tertiary",
+      "success",
+      "warning",
+      "error",
+    ],
   },
 
   googleFonts: {

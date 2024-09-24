@@ -295,6 +295,10 @@ definePageMeta({
   layout: "components",
 });
 
+defineRouteRules({
+  prerender: true,
+});
+
 const inputValue = ref("");
 const inputValue2 = ref("");
 const inputValue3 = ref("");

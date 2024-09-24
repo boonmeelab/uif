@@ -179,6 +179,10 @@ definePageMeta({
   layout: "components",
 });
 
+defineRouteRules({
+  prerender: true,
+});
+
 const rounded = ref(false);
 const label = ref("Badge");
 const size = ref<BadgeSize>("24");

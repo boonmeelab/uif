@@ -187,6 +187,10 @@ definePageMeta({
   layout: "components",
 });
 
+defineRouteRules({
+  prerender: true,
+});
+
 const mode = ref("hover");
 const overlay = ref(false);
 const arrow = ref(false);

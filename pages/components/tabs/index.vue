@@ -169,6 +169,10 @@ definePageMeta({
   layout: "components",
 });
 
+defineRouteRules({
+  prerender: true,
+});
+
 const textWhite = ref(false);
 const fullWidth = ref(false);
 const orientation = ref("horizontal");

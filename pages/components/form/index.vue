@@ -220,6 +220,10 @@ definePageMeta({
   layout: "components",
 });
 
+defineRouteRules({
+  prerender: true,
+});
+
 const label = ref("Email");
 const hint = ref("Optional");
 const help = ref("We will never share your email with anyone else.");

@@ -149,6 +149,10 @@ definePageMeta({
   layout: "components",
 });
 
+defineRouteRules({
+  prerender: true,
+});
+
 const toggle_1 = ref(false);
 const toggle_2 = ref(false);
 const disabled = ref(false);

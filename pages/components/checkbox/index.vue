@@ -142,6 +142,10 @@ definePageMeta({
   layout: "components",
 });
 
+defineRouteRules({
+  prerender: true,
+});
+
 const disabled = ref(false);
 const label = ref("Label");
 const help = ref("Description help");

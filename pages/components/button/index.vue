@@ -258,6 +258,10 @@ definePageMeta({
   layout: "components",
 });
 
+defineRouteRules({
+  prerender: true,
+});
+
 const text_button = ref("Button");
 
 const trailing = ref(false);

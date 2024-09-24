@@ -199,6 +199,10 @@ definePageMeta({
   layout: "components",
 });
 
+defineRouteRules({
+  prerender: true,
+});
+
 const limitSelect = ref<number>();
 const disabled = ref(false);
 
