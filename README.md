@@ -1,75 +1,89 @@
-# Nuxt 3 Minimal Starter
+# 🎏 UIF - UI Framework
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+BML UIF is a workflow for front-end developers, playing a crucial role in creating UI layouts. It's based on the fundamental design principles of BML UXD, utilizing Tailwind CSS and Nuxt UI as the foundational framework to define styles and patterns as specified by BML UXD.
 
-## Setup
+It consists of two key components:
 
-Make sure to install the dependencies:
+1. **Elements derived from BML UXD** (guidelines for commission project work), such as colors, fonts, layouts, and various components.
+2. **UI components** that have potential for reuse or are expected to function effectively, efficiently, and prove useful in future projects.
 
-```bash
-# npm
-npm install
+## 📌 Require
 
-# pnpm
-pnpm install
+- Nuxt 3 (currently v3.13.2)
+- Nuxt UI (currently v2.18.4)
 
-# yarn
-yarn install
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI documentation](https://ui.nuxt.com/getting-started) to learn more.
 
-# bun
-bun install
+## 🎨 Theme Configuration
+
+UIF themes can be used by setting theme config in file `tailwind.config.ts` [View Code](https://github.com/boonmeelab/uif/blob/main/tailwind.config.ts)
+
+## 💻 Setup
+
+### Tailwind
+
+[Content Configuration](https://tailwindcss.com/docs/content-configuration)
+
+```js
+# tailwind.config.ts
+
+export default {
+  content: [
+    ...
+    ...
+    "./config/ui/**/*.{js,ts}",
+  ],
+  ...
+} satisfies Config;
 ```
 
-## Development Server
+### App Config
 
-Start the development server on `http://localhost:3000`:
+The `uiConfig()` function takes two parameters: strategy (NuxtUI Config) and customConfig for additional customization of NuxtUI component configurations.
 
-```bash
-# npm
-npm run dev
+```js
+# app.config.ts
 
-# pnpm
-pnpm run dev
+import uiConfig from "./config/ui"
 
-# yarn
-yarn dev
+const customConfig = {}
+const config = uiConfig(customConfig);
 
-# bun
-bun run dev
+export default defineAppConfig({
+  ui: {
+    // Other Config Ex.
+    // strategy: "override",
+    // primary: "uiPrimary",
+    ...config,
+  }
+});
 ```
 
-## Production
+### UI Config
 
-Build the application for production:
+Compiles the basic UI styles for UIF, exported as a function that returns the Component Config format for NuxtUi.
 
-```bash
-# npm
-npm run build
+> Importing only the necessary files is recommended, and the Config code for each component can be viewed individually.
 
-# pnpm
-pnpm run build
+```js
+# config/ui/index.ts
 
-# yarn
-yarn build
+import type { Strategy } from '#ui/types';
+import { mergeConfig } from "#ui/utils";
 
-# bun
-bun run build
+// import component
+import { badge } from './badge';
+
+const defaultConfig = {
+  badge,
+  ...
+}
+
+type Props = { strategy?: Strategy; customConfig?: { [key: string]: any } }
+
+export default function ({ strategy = 'merge', customConfig }: Props = {}) {
+  type Ui = typeof defaultConfig & typeof customConfig
+
+  return mergeConfig<Ui>(strategy, customConfig, defaultConfig)
+}
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
