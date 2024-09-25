@@ -7,7 +7,6 @@ export default defineNuxtConfig({
   },
 
   app: {
-    baseURL: "/uif/",
     head: {
       title: "BML UI Framework",
     },
@@ -23,16 +22,8 @@ export default defineNuxtConfig({
     ],
   },
 
-  alias: {
-    "#ui/utils": "@nuxt/ui/dist/runtime/utils",
-  },
-
   components: {
     dirs: [{ path: "~/components/Ui", pathPrefix: false }, "~/components"],
-  },
-
-  build: {
-    transpile: ["@nuxt/ui", "./config"],
   },
 
   modules: ["@nuxt/ui", "@nuxtjs/google-fonts", "nuxt-lodash", "@vueuse/nuxt"],
