@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   },
 
   app: {
+    baseURL: "/uif/",
     head: {
       title: "BML UI Framework",
     },
