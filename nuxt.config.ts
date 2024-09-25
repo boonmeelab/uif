@@ -24,7 +24,7 @@ export default defineNuxtConfig({
   },
 
   alias: {
-    "#ui": "@nuxt/ui/dist/runtime",
+    "#ui/utils": "@nuxt/ui/dist/runtime/utils",
   },
 
   components: {
