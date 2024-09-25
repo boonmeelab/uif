@@ -23,6 +23,10 @@ export default defineNuxtConfig({
     ],
   },
 
+  alias: {
+    "#ui": "@nuxt/ui/dist/runtime",
+  },
+
   components: {
     dirs: [{ path: "~/components/Ui", pathPrefix: false }, "~/components"],
   },
