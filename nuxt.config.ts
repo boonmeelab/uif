@@ -31,6 +31,10 @@ export default defineNuxtConfig({
     dirs: [{ path: "~/components/Ui", pathPrefix: false }, "~/components"],
   },
 
+  build: {
+    transpile: ["@nuxt/ui", "./config"],
+  },
+
   modules: ["@nuxt/ui", "@nuxtjs/google-fonts", "nuxt-lodash", "@vueuse/nuxt"],
 
   colorMode: {
